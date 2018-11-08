@@ -1,0 +1,32 @@
+<%= form_with(model: reconciliation, local: true) do |form| %>
+  <% if reconciliation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reconciliation.errors.count, "error") %> prohibited this reconciliation from being saved:</h2>
+
+      <ul>
+      <% reconciliation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :payment_id %>
+    <%= form.text_field :payment_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :receipt_id %>
+    <%= form.text_field :receipt_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount_assigned_from_payment_to_receipt %>
+    <%= form.number_field :amount_assigned_from_payment_to_receipt %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

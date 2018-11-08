@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>INDEX DE WASHERS</h1>
+
+<table class="table table-striped table-responsive-xl">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>RUT</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Teléfono</th>
+      <th>Ciudad</th>
+      <th>Fecha Nacimiento</th>
+      <th>Role</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @washers.each do |washer| %>
+      <tr>
+        <td><%= washer.id %></td>
+        <td><%= washer.email %></td>
+        <td><%= washer.rut %></td>
+        <td><%= washer.first_name %></td>
+        <td><%= washer.last_name %></td>
+        <td><%= washer.cellphone %></td>
+        <td><%= washer.city %></td>
+        <td><%= washer.birth_date %></td>
+        <td><%= washer.role %></td>
+        <td><%= link_to 'Show', washer_path(washer) %></td>
+        <td><%= link_to 'Edit', edit_washer_registration_path(washer) %></td>
+        <td><%= link_to 'Destroy', washer_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Washer', new_washer_registration_path %>

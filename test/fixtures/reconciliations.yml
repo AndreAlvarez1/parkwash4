@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment: one
+  receipt: one
+  amount_assigned_from_payment_to_receipt: 1
+
+two:
+  payment: two
+  receipt: two
+  amount_assigned_from_payment_to_receipt: 1

@@ -1,0 +1,2 @@
+module WashTypesHelper
+end

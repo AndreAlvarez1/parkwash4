@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reconciliations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Payment</th>
+      <th>Receipt</th>
+      <th>Amount assigned from payment to receipt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reconciliations.each do |reconciliation| %>
+      <tr>
+        <td><%= reconciliation.payment %></td>
+        <td><%= reconciliation.receipt %></td>
+        <td><%= reconciliation.amount_assigned_from_payment_to_receipt %></td>
+        <td><%= link_to 'Show', reconciliation %></td>
+        <td><%= link_to 'Edit', edit_reconciliation_path(reconciliation) %></td>
+        <td><%= link_to 'Destroy', reconciliation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reconciliation', new_reconciliation_path %>

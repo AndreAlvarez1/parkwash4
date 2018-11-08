@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Creation date:</strong>
+  <%= @receipt.creation_date %>
+</p>
+
+<p>
+  <strong>Informed gross amount:</strong>
+  <%= @receipt.informed_gross_amount %>
+</p>
+
+<p>
+  <strong>Total discount amount:</strong>
+  <%= @receipt.total_discount_amount %>
+</p>
+
+<p>
+  <strong>Sii status:</strong>
+  <%= @receipt.sii_status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @receipt.user %>
+</p>
+
+<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Creation date:</strong>
+  <%= @wash.creation_date %>
+</p>
+
+<p>
+  <strong>Discount amount:</strong>
+  <%= @wash.discount_amount %>
+</p>
+
+<p>
+  <strong>Wash type:</strong>
+  <%= @wash.wash_type %>
+</p>
+
+<p>
+  <strong>Washer:</strong>
+  <%= @wash.washer %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @wash.vehicle %>
+</p>
+
+<p>
+  <strong>Receipt:</strong>
+  <%= @wash.receipt %>
+</p>
+
+<%= link_to 'Edit', edit_wash_path(@wash) %> |
+<%= link_to 'Back', washes_path %>

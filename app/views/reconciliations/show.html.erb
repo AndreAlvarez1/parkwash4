@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @reconciliation.payment %>
+</p>
+
+<p>
+  <strong>Receipt:</strong>
+  <%= @reconciliation.receipt %>
+</p>
+
+<p>
+  <strong>Amount assigned from payment to receipt:</strong>
+  <%= @reconciliation.amount_assigned_from_payment_to_receipt %>
+</p>
+
+<%= link_to 'Edit', edit_reconciliation_path(@reconciliation) %> |
+<%= link_to 'Back', reconciliations_path %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Payments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bank</th>
+      <th>Statement date</th>
+      <th>Document number</th>
+      <th>Description</th>
+      <th>Received amount</th>
+      <th>Commission</th>
+      <th>Comissioner</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.bank %></td>
+        <td><%= payment.statement_date %></td>
+        <td><%= payment.document_number %></td>
+        <td><%= payment.description %></td>
+        <td><%= payment.received_amount %></td>
+        <td><%= payment.commission %></td>
+        <td><%= payment.commissioner %></td>
+        <td><%= link_to 'Show', payment %></td>
+        <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment', new_payment_path %>

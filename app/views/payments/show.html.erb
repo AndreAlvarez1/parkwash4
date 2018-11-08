@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bank:</strong>
+  <%= @payment.bank %>
+</p>
+
+<p>
+  <strong>Statement date:</strong>
+  <%= @payment.statement_date %>
+</p>
+
+<p>
+  <strong>Document number:</strong>
+  <%= @payment.document_number %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @payment.description %>
+</p>
+
+<p>
+  <strong>Received amount:</strong>
+  <%= @payment.received_amount %>
+</p>
+
+<p>
+  <strong>Commission:</strong>
+  <%= @payment.commission %>
+</p>
+
+<p>
+  <strong>Comissioner:</strong>
+  <%= @payment.comissioner %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @payment.user %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

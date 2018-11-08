@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>INDEX DE USERS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>RUT</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Teléfono</th>
+      <th>Ciudad</th>
+      <th>Fecha Nacimiento</th>
+      <th>Card Status</th>
+      <th>Transdata Id</th>
+      <th>Recinto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.rut %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.cellphone %></td>
+        <td><%= user.city %></td>
+        <td><%= user.birth_date %></td>
+        <td><%= user.card_status %></td>
+        <td><%= user.transdata_id %></td>
+        <td><%= user.place_id %></td>
+        <td><%= link_to 'Show', user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_user_registration_path(user) %></td>
+        <td><%= link_to 'Destroy', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_registration_path %>

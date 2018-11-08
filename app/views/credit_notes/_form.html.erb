@@ -1,0 +1,37 @@
+<%= form_with(model: credit_note, local: true) do |form| %>
+  <% if credit_note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(credit_note.errors.count, "error") %> prohibited this credit_note from being saved:</h2>
+
+      <ul>
+      <% credit_note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :creation_date %>
+    <%= form.date_select :creation_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :informed_gross_amount %>
+    <%= form.number_field :informed_gross_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sii_status %>
+    <%= form.text_field :sii_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :receipt_id %>
+    <%= form.text_field :receipt_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

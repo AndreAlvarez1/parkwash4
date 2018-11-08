@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Credit Notes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Creation date</th>
+      <th>Informed gross amount</th>
+      <th>Sii status</th>
+      <th>Receipt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @credit_notes.each do |credit_note| %>
+      <tr>
+        <td><%= credit_note.creation_date %></td>
+        <td><%= credit_note.informed_gross_amount %></td>
+        <td><%= credit_note.sii_status %></td>
+        <td><%= credit_note.receipt %></td>
+        <td><%= link_to 'Show', credit_note %></td>
+        <td><%= link_to 'Edit', edit_credit_note_path(credit_note) %></td>
+        <td><%= link_to 'Destroy', credit_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Credit Note', new_credit_note_path %>

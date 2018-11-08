@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Creation date:</strong>
+  <%= @credit_note.creation_date %>
+</p>
+
+<p>
+  <strong>Informed gross amount:</strong>
+  <%= @credit_note.informed_gross_amount %>
+</p>
+
+<p>
+  <strong>Sii status:</strong>
+  <%= @credit_note.sii_status %>
+</p>
+
+<p>
+  <strong>Receipt:</strong>
+  <%= @credit_note.receipt %>
+</p>
+
+<%= link_to 'Edit', edit_credit_note_path(@credit_note) %> |
+<%= link_to 'Back', credit_notes_path %>

@@ -1,0 +1,43 @@
+﻿patent;type;brand;model;color;status;user;vehicle_size
+DKZX-22;Hatchback;Hyundai;i30;???;No;1;2
+DVBG-46;Hatchback;Suzuki;Swift;???;Si;2;2
+HBTD-59;Jeep;Nissan;Qashqai;???;Si;3;3
+FJDK-43;Hatchback;Nissan;Tida;???;Si;3;2
+JGHH-36;SUV;Toyota;Rav4;???;Si;4;3
+FPZS-81;Hatchback;Mazda;3;???;Si;4;2
+JTZD-72;SUV;BMW;X3;???;Si;5;3
+HD-1427;Sedán;BMW;Muy antiguo;???;Si;5;2
+FRVX-55;Camioneta;Chevrolet;Colorado;???;Si;6;3
+JXHZ-21;Camioneta;Ford;Ranger;???;Si;7;3
+HSZD-21;Van;Kia;Grand Carnival;???;Si;8;3
+GVHR-11;Hatchback;Toyota;Yaris;???;Si;9;2
+DWFT-26;Hatchback;Kia;Rio5;???;Si;10;2
+JKFV-41;SUV;Toyota;Rav4;???;Si;11;3
+FDPP-31;Sedan;Suzuki;Kizashi;???;Si;12;2
+GHWX-85;Sedan;Renault;Fluence;???;Si;12;2
+TL-5655;Sedan;Citroen;Xantia;???;Si;13;2
+DHFD-13;Hatchback;Suzuki;SX4;???;Si;14;2
+JJPT-91;Jeep;Mistubishi;Montero;???;Si;15;3
+JTWY-20;SUV;Toyota;Rav4;???;Si;16;3
+JKTL-71;Sedan;Volvo;S60;???;Si;17;2
+CLGR 27;SUV;Honda;Pilot;???;Si;17;3
+HFDS-97;Camioneta;Ford;Ranger;???;Si;18;3
+???;VAN;Kia;Grand Carnival;???;Si;19;3
+JWYV-24;Sedan;Mazda;6;???;Si;20;2
+HSTD-29;Hatchback;Subaru;XV;???;Si;21;2
+JXWT-93;Hatchback;Kia;Morning;???;Si;22;2
+???;Hatchback;Citroen;C4;???;Si;23;2
+JRTB-58;Hatchback;BMW;118i;???;Si;24;2
+JHWV-45;Sedán;Suzuki;Ciaz;???;Si;25;2
+???;Hatchback;Chevrolet;Corsa 3;???;Si;25;2
+JCBH-29;Hatchback;Mazda;3 (Rojo);???;No;26;2
+CPHZ-86;Van;Douge;Journey;???;Si;27;3
+YX60-67;Hatchback;Peugeot;207;???;No;28;2
+HTWL-27;SUV;Toyota;Rav4;???;Si;29;3
+GXLW-92;Hatchback;Suzuki;Swift;???;Si;35;2
+JFRR-29;SUV;Toyota;Rav4;???;Si;31;3
+GHHK-62;Hatchback;Suzuki;Swift;???;No;32;2
+JBDV-35;???;Hyundai;???;Blanco;Si;33;2
+HWCV-46;???;Hyundai;???;Blanco;Si;30;2
+KTFB-25;Hatchback;Volkswagen;Polo;Blanco;Si;32;2
+AAAA-11;Auto Genérico;Auto Genérico;Auto Genérico;Auto Genérico;Si;36;1

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Intranet Parkwash</title>
+  </head>
+  <body>
+
+    <div class="container">
+
+    </div>
+    <h1>Intranet Parkwash</h1>
+
+    <ul>
+
+      <% if washer_signed_in?  %>
+
+        <h4>Hola Washer. Estás Loggeado con Washer Email: <%= @washer.email %> </h4>
+        <p>Tu Rol es: <%= @washer.role %> </p>
+
+
+
+        <li><%= link_to "Editar Perfil de Washer", edit_washer_registration_path, class: "btn btn-warning" %></li>
+        <div style = "margin-top: 10px"> </div>
+
+        <li><%= link_to 'Washer Sign Out', destroy_washer_session_path, method: :delete, class: "btn btn-danger" %></li>
+        <div style = "margin-top: 10px"> </div>
+
+        <%= render 'pages/signed_in_washer' %>
+
+
+      <% else %>
+        <p>No estás loggeado bajo ninguna sesión de Washer </p>
+        <li><%= link_to 'Washer Sign In', new_washer_session_path, class: "btn btn-success" %> </li>
+        <div style = "margin-top: 10px"> </div>
+        <li><%= link_to 'Washer Sign Up', new_washer_registration_path, class: "btn btn-primary"%> </li>
+
+      <% end  %>
+  </body>
+</html>

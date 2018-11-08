@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creation_date: 2018-10-05
+  informed_gross_amount: 1
+  sii_status: MyString
+  receipt: one
+
+two:
+  creation_date: 2018-10-05
+  informed_gross_amount: 1
+  sii_status: MyString
+  receipt: two

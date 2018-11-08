@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Washes</h1>
+
+<table class="table table-striped table-responsive-xl">
+  <thead>
+    <tr>
+      <th>Creation date</th>
+      <th>Discount amount</th>
+      <th>Wash type</th>
+      <th>Washer Name</th>
+      <th>Vehicle Patent</th>
+      <th>Receipt Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.washes.each do |wash| %>
+      <tr>
+        <td><%= wash.creation_date %></td>
+        <td><%= wash.discount_amount %></td>
+        <td><%= wash.wash_type.name %></td>
+        <td><%= wash.washer.first_name %></td>
+        <td><%= wash.vehicle.patent %></td>
+        <td><%= wash.receipt.id %></td>
+        <td><%= link_to 'Show', user_wash_path({user_id: @user.id}, wash) %></td>
+        <td><%= link_to 'Edit', edit_user_wash_path({user_id: @user.id}, wash) %></td>
+        <td><%= link_to 'Destroy', user_wash_path({user_id: @user.id}, wash), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

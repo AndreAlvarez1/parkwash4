@@ -1,0 +1,161 @@
+
+
+
+
+<div class="row">
+
+  <div class="offset-md-1 col-md-7">
+
+    <h2>Principales Datos</h2>
+
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">TABLA</th>
+          <th scope="col">Ver Tabla</th>
+          <th scope="col">Crear Nuevo Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <th>Lavadores</th>
+          <td><%= link_to "Ver Lavadores", washers_path, class: "btn btn-light" %></td>
+          <td><%= link_to "Nuevo Lavador", new_washer_registration_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Usuarios</th>
+          <td><%= link_to "Ver Usuarios", users_path, class: "btn btn-light" %></td>
+          <td><%= link_to "Nuevo Usuario", new_user_registration_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Vehículos</th>
+          <td><%= link_to "Ver Vehículos", vehicles_index_all_path, class: "btn btn-light" %></td>
+          <td><%= link_to "Nuevo Vehículo", vehicles_new_path, class: "btn btn-primary" %></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+<div style = "margin-top: 50px"> </div>
+
+
+<div class="row">
+
+  <div class="offset-md-1 col-md-7">
+
+    <h2>Agregando Nuevos Lavados y Pagos</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">TABLA</th>
+          <th scope="col">Ver Tabla</th>
+          <th scope="col">Crear Nuevo Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <th>Lavados</th>
+          <td><%= link_to "Ver Lavados", washes_index_all_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nuevo Lavado", washes_new_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Pagos</th>
+          <td><%= link_to "Ver Pagos", payments_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nuevo Pago", new_payment_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Boleta</th>
+          <td><%= link_to "Ver Boletas", receipts_index_all_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nueva Boleta", receipts_new_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Nota de Crédito</th>
+          <td><%= link_to "Ver NCs", credit_notes_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nueva NC", new_credit_note_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Conciliación</th>
+          <td><%= link_to "Ver Conciliación", reconciliations_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nueva Asignación", new_reconciliation_path, class: "btn btn-primary" %></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+<div style = "margin-top: 50px"> </div>
+
+<div class="row">
+
+  <div class="offset-md-1 col-md-7">
+
+    <h2>Cambiando Parámetros Fijos</h2>
+
+    <table class="table table-bordered""">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">TABLA</th>
+          <th scope="col">Ver Tabla</th>
+          <th scope="col">Crear Nuevo Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <th>Recintos</th>
+          <td><%= link_to "Ver Recintos", places_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nuevo Recinto", new_place_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Tamaños de Vehículos</th>
+          <td><%= link_to "Ver Tamaño de Vehículos", vehicle_sizes_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nuevo Tamaño de Vehículo", new_vehicle_size_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Tipos de Lavado</th>
+          <td><%= link_to "Ver Tipo de Lavado", wash_types_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nuevo Tipo de Lavado", new_wash_type_path, class: "btn btn-primary" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <th>Precios</th>
+          <td><%= link_to "Ver Lista de Precios", prices_path, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to "Nuevo Precio", new_price_path, class: "btn btn-primary" %></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

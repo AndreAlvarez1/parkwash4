@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  place: one
+  wash_type: one
+  vehicle_size: one
+  gross_amount: 1
+
+two:
+  place: two
+  wash_type: two
+  vehicle_size: two
+  gross_amount: 1
