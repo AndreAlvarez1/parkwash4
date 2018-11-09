@@ -5,6 +5,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles.json
   def index
     @vehicles = Vehicle.all
+    @user = current_user
   end
 
   # GET /vehicles/1

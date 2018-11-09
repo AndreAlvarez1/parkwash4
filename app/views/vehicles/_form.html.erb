@@ -1,57 +1,58 @@
-<%= form_with(model: vehicle, local: true) do |form| %>
-  <% if vehicle.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
 
-      <ul>
-      <% vehicle.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_with(model: vehicle, url: [current_user, vehicle], local: true) do |form| %>
+    <% if vehicle.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+        <ul>
+        <% vehicle.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :patent %>
+      <%= form.text_field :patent %>
+    </div>
+
+    <div class="field">
+      <%= form.label :vehicle_type %>
+      <%= form.text_field :vehicle_type %>
+    </div>
+
+    <div class="field">
+      <%= form.label :brand %>
+      <%= form.text_field :brand %>
+    </div>
+
+    <div class="field">
+      <%= form.label :model %>
+      <%= form.text_field :model %>
+    </div>
+
+    <div class="field">
+      <%= form.label :color %>
+      <%= form.text_field :color %>
+    </div>
+
+    <div class="field">
+      <%= form.label :status %>
+      <%= form.check_box :status %>
+    </div>
+
+    <div class="field">
+      <%= form.label :user_id %>
+      <%= form.text_field :user_id %>
+    </div>
+
+    <div class="field">
+      <%= form.label :vehicle_size_id %>
+      <%= form.text_field :vehicle_size_id %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :patent %>
-    <%= form.text_field :patent %>
-  </div>
-
-  <div class="field">
-    <%= form.label :vehicle_type %>
-    <%= form.text_field :vehicle_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
-  </div>
-
-  <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
-  </div>
-
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.check_box :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :vehicle_size_id %>
-    <%= form.text_field :vehicle_size_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

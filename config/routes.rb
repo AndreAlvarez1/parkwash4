@@ -39,4 +39,5 @@ Rails.application.routes.draw do
     resources :receipts
   end
 
+
 end

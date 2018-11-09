@@ -5,6 +5,7 @@ class ReceiptsController < ApplicationController
   # GET /receipts.json
   def index
     @receipts = Receipt.all
+    @user = current_user
   end
 
   # GET /receipts/1

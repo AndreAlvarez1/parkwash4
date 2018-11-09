@@ -24,9 +24,7 @@
         <td><%= wash.washer.first_name %></td>
         <td><%= wash.vehicle.patent %></td>
         <td><%= wash.receipt.id %></td>
-        <td><%= link_to 'Show', user_wash_path({user_id: @user.id}, wash) %></td>
-        <td><%= link_to 'Edit', edit_user_wash_path({user_id: @user.id}, wash) %></td>
-        <td><%= link_to 'Destroy', user_wash_path({user_id: @user.id}, wash), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', user_wash_path({user_id: @user.id}, wash) %></td>
       </tr>
     <% end %>
   </tbody>

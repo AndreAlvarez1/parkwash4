@@ -7,4 +7,5 @@ class User < ApplicationRecord
   belongs_to :place
   has_many :vehicles, dependent: :delete_all
   has_many :washes, through: :vehicles
+  has_many :receipts
 end

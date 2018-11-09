@@ -28,7 +28,7 @@
                 <ul>
 
                   <% if user_signed_in?  %>
-                    <li><%= link_to "Hola #{@user.email}", edit_user_registration_path %></li>
+                    <li><%= link_to "Ver Mi Perfil", user_path(@user) %></li>
                     <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
 
                   <% else %>
