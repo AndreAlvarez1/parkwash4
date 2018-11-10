@@ -10,6 +10,20 @@ class WashesController < ApplicationController
 
   def index_all
     @washes = Wash.all
+    @wash = Wash.new
+    @washes =  if params[:search_q].present?
+                Wash.where("id like ?", "%#{params[:search_q]}%")
+              else
+                Wash.all
+              end
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: @resource }
+    end
+
+
+
   end
 
   # GET /washes/1
@@ -34,6 +48,7 @@ class WashesController < ApplicationController
     respond_to do |format|
       if @wash.save
         format.html { redirect_to @wash, notice: 'Wash was successfully created.' }
+        format.js
         format.json { render :show, status: :created, location: @wash }
       else
         format.html { render :new }

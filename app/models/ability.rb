@@ -4,7 +4,7 @@ class Ability
 
   def initialize(user)
 
-    if user.class = User
+    if user.class.name == "User"
 
       return unless user.present?
 
@@ -12,70 +12,6 @@ class Ability
       can :read, User, user_id: user.id # if the user is logged in, he can read its profile
       can :update, User, user_id: user.id # if the user is logged in, he can update its profile
       can :edit, User, user_id: user.id # if the user is logged in, he can edit its profile
-
-      # Permits regarding VEHICLES
-      can :create, Vehicle, user_id: user.id # if the user is logged in, he can create own vehicles
-      can :read, Vehicle, user_id: user.id # if the user is logged in, he can read his vehicles
-      can :update, Vehicle, user_id: user.id # if the user is logged in, he can update his vehicles
-      can :edit, Vehicle, user_id: user.id # if the user is logged in, he can edit his vehicles
-
-      # Permits regarding WASHES
-      can :read, Wash, user_id: user.id # if the user is logged in, he can read his washes
-
-      # Permits regarding PAYMENTS
-      can :read, Payment, user_id: user.id # if the user is logged in, he can read his payments
-
-      # Permits regarding PLACES
-      can :read, Place, user_id: user.id # if the user is logged in, he can read his places
-
-
-    elsif user.class = Washer
-
-      return unless user.present? #All roles of Washers can do the following when logged in
-
-      # Permits regarding WASHERS
-      can :read, Washer, washer_id: user.id # if the washer is logged in, he can read his profile
-      can :update, Washer, washer_id: user.id # if the washer is logged in, he can update his profile
-      can :edit, Washer, washer_id: user.id # if the washer is logged in, he can edit his profile
-
-      # Permits regarding WASHES
-      can :create, Wash, washer_id: user.id # if the washer is logged in, he can create washes under his name
-      can :read, Wash, washer_id: user.id # if the user is logged in, he can read his washes
-      can :update, Wash, washer_id: user.id # if the user is logged in, he can update his washes
-      can :edit, Wash, washer_id: user.id # if the user is logged in, he can edit his washes
-
-      return unless user.supervisor? # if the washer is a supervisor we give additional permissions
-
-      # Permits regarding WASHERS
-      can :read, Washer, # if the washer is supervisor, he can read any washer
-      can :update, Washer, # if the washer is supervisor, he can update any washer
-      can :edit, Washer, # if the washer is supervisor, he can edit any washer
-
-      # Permits regarding WASHES
-      can :create, Wash, # if the washer is supervisor, he can create any wash
-      can :read, Wash, # if the washer is supervisor, he can read all washes
-      can :update, Wash, # if the washer is supervisor, he can update all washes
-      can :edit, Wash, # if the washer is supervisor, he can edit all washes
-      can :destroy, Wash, # if the washer is supervisor, he can destroy all washes
-
-      return unless user.admin? # if the washer is a admin we give additional permissions
-
-      # Admin can Read Everything
-      can :read, User, # if the washer is admin, he can read all users
-      can :read, Washer, # if the washer is admin, he can read all washers
-      can :read, Wash, # if the washer is admin, he can read all washers
-      can :read, Vehicle, # if the washer is admin, he can read all vehicles
-      can :read, Place, # if the washer is admin, he can read all places
-      can :read, Payment, # if the washer is admin, he can read all payments
-      can :read, Receipt, # if the washer is admin, he can read all payments
-      can :read, Credit_note, # if the washer is admin, he can read all payments
-      can :read, Reconciliation, # if the washer is admin, he can read all payments
-      can :read, Wash_type, # if the washer is admin, he can read all payments
-      can :read, Vehicle_size, # if the washer is admin, he can read all washes
-      can :read, Price, # if the washer is admin, he can read all washes
-
-      return unless user.superadmin? # if the washer is a admin we give remaining permissions
-      can :manage, :all
 
     end
 
