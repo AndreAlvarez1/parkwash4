@@ -31,6 +31,7 @@ class VehiclesController < ApplicationController
   # POST /vehicles.json
   def create
     @vehicle = Vehicle.create(vehicle_params)
+    render json: @vehicle.as_json
 
     # respond_to do |format|
     #   if @vehicle.save

@@ -2,7 +2,7 @@
 
 <h1>All Vehicles</h1>
 
-<table class="table table-striped table-responsive-xl">
+<table class="table table-striped table-responsive-xl" id="All_Vehicles_Table" >
   <thead>
     <tr>
       <th>ID</th>
@@ -35,15 +35,17 @@
 
 <script>
 
-  $(window).click(function(){
+  $("[name=commit]").click(function(e){
+    e.preventDefault();
+    var form = $("#NewVehicleForm")
     $.ajax({
-      url: '<%= user_vehicles_path(current_user) %>',
+      url: form.action,
       type: 'POST',
-      dataType: 'script',
-      data: {vehicle: {patent: 'XXXX-XX', user_id: 10, vehicle_size_id: 2}}
+      dataType: 'json',
+      data: form.serialize()
     })
-    .done(function() {
-      console.log("success");
+    .done(function(data) {
+      $("#NewVehicleForm").append(data)
     })
     .fail(function() {
       console.log("error");
@@ -51,6 +53,7 @@
     .always(function() {
       console.log("complete");
     });
+  }
 
   })
 

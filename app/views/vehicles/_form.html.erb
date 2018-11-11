@@ -1,5 +1,5 @@
 
-  <%= form_with(model: vehicle, url: [current_user, vehicle], local: true) do |form| %>
+  <%= form_with(model: vehicle, url: [current_user, vehicle], local: true, id: "NewVehicleForm") do |form| %>
     <% if vehicle.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
