@@ -1,0 +1,13 @@
+<tr id='<%= vehicle.id %>'>
+  <td><%= vehicle.id %></td>
+  <td><%= vehicle.patent %></td>
+  <td><%= vehicle.user.first_name + " " + vehicle.user.last_name %></td>
+  <td><%= vehicle.vehicle_type %></td>
+  <td><%= vehicle.brand %></td>
+  <td><%= vehicle.model %></td>
+  <td><%= vehicle.color %></td>
+  <td><%= vehicle.status %></td>
+  <td><%= vehicle.vehicle_size.name %></td>
+  <td><%= link_to 'Show', user_vehicle_path({user_id: vehicle.user.id}, vehicle) %></td>
+  <td><%= link_to 'Edit', edit_user_vehicle_path({user_id: vehicle.user.id}, vehicle) %></td>
+</tr>

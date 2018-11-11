@@ -8,6 +8,11 @@ class VehiclesController < ApplicationController
     @user = current_user
   end
 
+  def index_all
+    @vehicles = Vehicle.all
+    @vehicle = Vehicle.new
+    @user = current_user
+  end
   # GET /vehicles/1
   # GET /vehicles/1.json
   def show
@@ -25,17 +30,17 @@ class VehiclesController < ApplicationController
   # POST /vehicles
   # POST /vehicles.json
   def create
-    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle = Vehicle.create(vehicle_params)
 
-    respond_to do |format|
-      if @vehicle.save
-        format.html { redirect_to @vehicle, notice: 'Vehicle was successfully created.' }
-        format.json { render :show, status: :created, location: @vehicle }
-      else
-        format.html { render :new }
-        format.json { render json: @vehicle.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @vehicle.save
+    #     format.html { redirect_to vehicles_index_all_path, notice: 'Vehicle was successfully created.' }
+    #     format.json { render :show, status: :created, location: @vehicle }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @vehicle.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /vehicles/1
@@ -43,7 +48,7 @@ class VehiclesController < ApplicationController
   def update
     respond_to do |format|
       if @vehicle.update(vehicle_params)
-        format.html { redirect_to @vehicle, notice: 'Vehicle was successfully updated.' }
+        format.html { redirect_to vehicles_index_all_path, notice: 'Vehicle was successfully updated.' }
         format.json { render :show, status: :ok, location: @vehicle }
       else
         format.html { render :edit }

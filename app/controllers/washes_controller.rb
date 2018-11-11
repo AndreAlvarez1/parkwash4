@@ -21,9 +21,6 @@ class WashesController < ApplicationController
       format.js
       format.json { render json: @resource }
     end
-
-
-
   end
 
   # GET /washes/1
