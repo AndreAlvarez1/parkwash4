@@ -38,7 +38,7 @@
 
     <div class="field">
       <%= f.label :role %><br />
-      <%= f.number_field :role, autocomplete: "role" %>
+      <%= f.select :role, Washer.roles.keys.to_a %>
     </div>
 
     <div class="field">

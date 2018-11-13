@@ -35,6 +35,11 @@
 
   <body>
 
+    <% if alert.present? %>
+      <div class="alert alert-danger"> <%= alert %> </div>
+    <% end %>
+
+
     <!-- <%= render 'layouts/navbar2' %>
 
     <p class="notice"><%= notice %></p>

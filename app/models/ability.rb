@@ -4,7 +4,11 @@ class Ability
 
   def initialize(user)
 
+    user ||= User.new # guest user (not logged in)
+
     if user.class.name == "User"
+
+      can :manage, Page # if the user is or is not logged in, he can see the homepage
 
       return unless user.present?
 
@@ -12,6 +16,12 @@ class Ability
       can :read, User, user_id: user.id # if the user is logged in, he can read its profile
       can :update, User, user_id: user.id # if the user is logged in, he can update its profile
       can :edit, User, user_id: user.id # if the user is logged in, he can edit its profile
+
+    elsif user.class.name = "Washer"
+
+      can :read, Page # if the user is or is not logged in, he can see the homepage
+
+      can :manage, :all
 
     end
 

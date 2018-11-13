@@ -1,4 +1,5 @@
 class CreditNotesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_credit_note, only: [:show, :edit, :update, :destroy]
 
   # GET /credit_notes
