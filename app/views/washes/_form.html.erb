@@ -1,4 +1,4 @@
-<%= form_with(model: wash, url: [current_user, wash]) do |form| %>
+<%= form_with(model: @wash, url: [current_user, @wash]) do |form| %>
   <% if wash.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(wash.errors.count, "error") %> prohibited this wash from being saved:</h2>

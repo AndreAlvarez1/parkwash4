@@ -1,6 +1,6 @@
 class WashesController < ApplicationController
   before_action :set_wash, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  # load_and_authorize_resource
   # skip_authorization_check :only => [:new, :create]
 
   # GET /washes
