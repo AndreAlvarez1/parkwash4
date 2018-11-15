@@ -18,7 +18,6 @@
  *= require fancybox/jquery.fancybox
  *= require fancybox/helpers/jquery.fancybox-buttons
  *= require revolution/layers
- *= require revolution/settings
  *= require revolution/navigation
  *= require base
  *= require responsive
