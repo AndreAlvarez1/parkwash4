@@ -23,7 +23,7 @@ website:   	http://www.themepunch.com
   font-style: normal;
 } */
 
- [class^="revicon-"]:before, [class*=" revicon-"]:before {
+ /* [class^="revicon-"]:before, [class*=" revicon-"]:before {
   font-family: "revicons";
   font-style: normal;
   font-weight: normal;
@@ -32,7 +32,7 @@ website:   	http://www.themepunch.com
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
-  text-align: center;
+  text-align: center; */
 
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
