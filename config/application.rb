@@ -2,6 +2,9 @@ require_relative 'boot'
 
 require 'rails/all'
 
+# Already tested Heroku with following line and didn't worked. Erase when works
+# config.assets.initialize_on_precompile = false
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
