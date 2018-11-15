@@ -14,11 +14,9 @@
  *= require jquery-ui.min
  *= require superfish
  *= require flexnav
- *= require DateTimePicker.min
  *= require fancybox/jquery.fancybox
  *= require fancybox/helpers/jquery.fancybox-buttons
  *= require revolution/layers
- *= require base
  *= require responsive
  *= require flat_user_profile_ui
  *
