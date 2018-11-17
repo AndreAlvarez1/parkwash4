@@ -30,7 +30,8 @@ gem "devise", git: 'https://github.com/plataformatec/devise.git'
 gem 'rails-erd', require: false, group: :development
 #CANCANCAN
 gem 'cancancan'
-
+# Gem for omniauth-devise
+gem 'omniauth-facebook'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

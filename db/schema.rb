@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_01_183543) do
+ActiveRecord::Schema.define(version: 2018_11_17_041343) do
 
   create_table "credit_notes", force: :cascade do |t|
     t.date "creation_date"
@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(version: 2018_11_01_183543) do
     t.boolean "card_status"
     t.string "transdata_id"
     t.integer "place_id"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["place_id"], name: "index_users_on_place_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
