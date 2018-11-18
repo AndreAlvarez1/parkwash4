@@ -1,74 +1,55 @@
-<h2>Sign up</h2>
+<div class="row justify-content-center">
+  <div class="col-4">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <%= form_for(resource,
+    as: resource_name,
+    url: registration_path(resource_name),
+    html: {class: 'form'}
+    ) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :rut %><br />
-    <%= f.text_field :rut, autofocus: true, autocomplete: "rut" %>
+    <h2>Sign up</h2>
+
+    <div class="form-group">
+      <%= f.label :rut %><br />
+      <%= f.text_field :rut, autofocus: true, class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :place_id %><br />
+      <%= f.collection_select :place_id,
+      Place.order(:name),:id,:name, include_blank: true,
+      class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password,
+      autocomplete: "off",
+      class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation,
+      autocomplete: "off",
+      class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", class: 'btn btn-success' %>
+    </div>
+    <%= render "devise/shared/links" %>
+
+    <% end %>
+
   </div>
-
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autocomplete: "first_name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autocomplete: "last_name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cellphone %><br />
-    <%= f.text_field :cellphone, autocomplete: "cellphone" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city, autocomplete: "city" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :birth_date %><br />
-    <%= f.date_field :birth_date, autocomplete: "birth_date" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :card_status %><br />
-    <%= f.check_box :card_status %>
-  </div>
-
-  <div class="field">
-    <%= f.label :transdata_id %><br />
-    <%= f.number_field :transdata_id, autocomplete: "transdata_id" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :place_id %><br />
-    <%= f.number_field :place_id, autocomplete: "place_id" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

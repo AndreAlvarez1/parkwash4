@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_17_041343) do
+ActiveRecord::Schema.define(version: 2018_11_18_223650) do
 
   create_table "credit_notes", force: :cascade do |t|
     t.date "creation_date"
@@ -92,7 +92,6 @@ ActiveRecord::Schema.define(version: 2018_11_17_041343) do
     t.string "last_name"
     t.string "cellphone"
     t.string "city"
-    t.date "birth_date"
     t.boolean "card_status"
     t.string "transdata_id"
     t.integer "place_id"
@@ -147,7 +146,6 @@ ActiveRecord::Schema.define(version: 2018_11_17_041343) do
     t.string "last_name"
     t.string "cellphone"
     t.string "city"
-    t.date "birth_date"
     t.integer "role"
     t.index ["email"], name: "index_washers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_washers_on_reset_password_token", unique: true
