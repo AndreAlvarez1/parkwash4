@@ -66,7 +66,7 @@ Rails.application.configure do
     :port => 587,
     :domain => "mailgun.parkwash.mailgun.org",
     :user_name => "nicolas.alamo@parkwash.cl",
-    :password => "rgvfy943"
+    :password => "XXXXXX"
   }
 
 end
