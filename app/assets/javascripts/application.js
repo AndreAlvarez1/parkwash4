@@ -29,6 +29,8 @@
 //= require jquery.touchSwipe.min
 //= require DateTimePicker.min
 //
+//= require jquery.backstretch.min.js
+//
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
 //= require revolution.extension.actions.min

@@ -12,6 +12,12 @@ class Washers::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    @washer = Washer.new
+    if @washer.save
+      ModelMailer.new_record_notification(@washer).deliver
+      redirect_to root_path
+    end
+
   end
 
   # GET /resource/edit
