@@ -1,3 +1,3 @@
 Mailgun.configure do |config|
-  config.api_key = '1053eade-cf7c987b'
+  config.api_key = ENV['MAILGUN_API_KEY']
 end
