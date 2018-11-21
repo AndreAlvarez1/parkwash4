@@ -6,11 +6,11 @@ class ModelMailer < ApplicationMailer
   #   en.model_mailer.new_record_notification.subject
   #
 
-  default from: "franciscogutierrezp1967@gmail.com"
+  default from: "nicolas.alamo@parkwash.cl"
 
   def sample_email(user)
     @user = user
-    mail(to: @user.email, subject: 'Sample Gmail Email')
+    mail(to: 'nicoalamo@gmail.com', subject: 'Sample Gmail Email')
   end
 
   # def new_record_notification(record)

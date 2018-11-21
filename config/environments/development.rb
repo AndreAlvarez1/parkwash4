@@ -65,16 +65,16 @@ Rails.application.configure do
   #   domain: 'localhost:3000'
   # }
 
-    #EMAIL SENDER CONFIGURATION
-    config.action_mailer.delivery_method = :smtp
-    # SMTP settings for gmail
-    config.action_mailer.smtp_settings = {
-     :address              => "smtp.gmail.com",
-     :port                 => 587,
-     :user_name            => ENV['GMAIL_USERNAME'],
-     :password             => ENV['GMAIL_PASS'],
-     :authentication       => "plain",
-     :enable_starttls_auto => true
-    }
+  #EMAIL SENDER CONFIGURATION
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_PARKWASH_USERNAME'],
+   :password             => ENV['GMAIL_PARKWASH_PASS'],
+   :authentication       => "plain",
+   :enable_starttls_auto => true
+  }
 
 end
