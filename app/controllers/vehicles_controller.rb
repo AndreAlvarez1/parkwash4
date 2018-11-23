@@ -31,18 +31,20 @@ class VehiclesController < ApplicationController
   # POST /vehicles
   # POST /vehicles.json
   def create
+    # debugger
     @vehicle = Vehicle.create(vehicle_params)
-    render json: @vehicle.as_json
+    # render json: @vehicle.as_json
 
-    # respond_to do |format|
-    #   if @vehicle.save
-    #     format.html { redirect_to vehicles_index_all_path, notice: 'Vehicle was successfully created.' }
-    #     format.json { render :show, status: :created, location: @vehicle }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @vehicle.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    respond_to do |format|
+      if @vehicle.save
+        format.html { redirect_to vehicles_index_all_path, notice: 'Vehicle was successfully created.' }
+        # format.js
+        format.json { render @vehicle, status: :created}
+      else
+        format.html { render :new }
+        format.json { render json: @vehicle.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /vehicles/1

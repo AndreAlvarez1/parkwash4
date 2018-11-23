@@ -38,14 +38,15 @@
   $("[name=commit]").click(function(e){
     e.preventDefault();
     var form = $("#NewVehicleForm")
+    // debugger
     $.ajax({
-      url: form.action,
+      url: form[0].action,
       type: 'POST',
       dataType: 'json',
       data: form.serialize()
     })
     .done(function(data) {
-      $("#NewVehicleForm").append(data)
+      $("#All_Vehicles_Table").append(data)
     })
     .fail(function() {
       console.log("error");
@@ -53,7 +54,7 @@
     .always(function() {
       console.log("complete");
     });
-  }
+
 
   })
 
