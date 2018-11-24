@@ -4,6 +4,9 @@
 
 require 'csv'
 
+AdminUser.create!(email: 'nicoalamo2@gmail.com', password: '111111', password_confirmation: '111111') if Rails.env.development?
+
+
 errors = []
 #--------------------------PLACES DATABASE POPULATION--------------------------
 csv_text = File.read(Rails.root.join('db', 'seeds_databases', 'places_db.csv'))
@@ -38,7 +41,6 @@ csv_file.each do |row|
   x.email = array[3]
   x.cellphone = array[4]
   x.city = array[5]
-  x.birth_date = array[6].to_date
   x.card_status = array[7].to_s == "true"
   x.transdata_id = array[8]
   x.place_id = array[9].to_i
@@ -62,8 +64,7 @@ csv_file.each do |row|
   x.email = array[3]
   x.cellphone = array[4]
   x.city = array[5]
-  x.birth_date = array[6].to_date
-  x.role = array[6].to_i
+  x.role = array[7].to_i
   x.password = '111111'
   x.save
   puts "Errors: #{x.errors.messages}"
@@ -254,3 +255,4 @@ puts "There are now #{Payment.count} rows in the Payments table"
 puts "There are now #{CreditNote.count} rows in the CreditNotes table"
 puts "There are now #{Reconciliation.count} rows in the Reconciliations table"
 puts "There are now #{Wash.count} rows in the Washes table"
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
