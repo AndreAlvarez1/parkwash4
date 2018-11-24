@@ -34,6 +34,13 @@ gem 'cancancan'
 gem 'omniauth-facebook'
 # Gem for MailGun
 gem 'mailgun-ruby', '~>1.1.6'
+# Gem ActiveAdmin for Administration Panel
+gem 'activeadmin'
+# Gem for Graphs
+gem 'chartkick'
+# Gem for grouping in graphs
+gem 'groupdate'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
