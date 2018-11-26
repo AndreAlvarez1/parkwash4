@@ -24,3 +24,6 @@ Rails.application.config.assets.precompile += %w[*.jpg *.png *.svg *.gif *.bmp]
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
+
+#CHARTKICK ASSETS PRECOMPILE
+Rails.application.config.assets.precompile += %w( chartkick.js )
