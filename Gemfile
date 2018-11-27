@@ -40,6 +40,8 @@ gem 'activeadmin'
 gem 'chartkick'
 # Gem for grouping in graphs
 gem 'groupdate'
+# Template for ActiveAdmin
+gem 'arctic_admin'
 
 
 # Use CoffeeScript for .coffee assets and views

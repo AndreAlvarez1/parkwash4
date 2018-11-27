@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require chartkick
+//
 //= require jquery-ui.min
 //= require superfish.min
 //= require jquery.easing
@@ -60,6 +62,7 @@
 //= require jquery.template.testimonial
 //= require public
 //
+//= stub active_admin.js
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

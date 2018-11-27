@@ -23,7 +23,8 @@
  *= require base
  *= require responsive
  *= require flat_user_profile_ui
-
+ *
+ *= stub active_admin
  *= require_tree .
  *= require_self
  */
