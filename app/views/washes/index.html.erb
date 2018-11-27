@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-
-<h2>Search Wash</h2>
-<form class="" action="<%= washes_index_all_path %>" method="get">
-  <input name="q">
-</form>
+<!-- <div class="row">
+  <div class="col-md-3">
+    <h2>Search Wash</h2>
+    <form class="" action="<%= washes_index_all_path %>" method="get">
+      <input name="q">
+    </form>
+  </div>
+</div> -->
 
 <h1>Washes</h1>
 
@@ -25,8 +28,8 @@
   <tbody>
     <% @user.washes.each do |wash| %>
       <tr>
+        <td><%= wash.id %></td>
         <td><%= wash.creation_date %></td>
-        <td><%= wash.discount_amount %></td>
         <td><%= wash.wash_type.name %></td>
         <td><%= wash.washer.first_name %></td>
         <td><%= wash.vehicle.patent %></td>
@@ -37,4 +40,7 @@
   </tbody>
 </table>
 
+<%= link_to 'Volver a Mi Perfil', user_path(@user), class: "btn btn-primary" %>
+
+<br>
 <br>

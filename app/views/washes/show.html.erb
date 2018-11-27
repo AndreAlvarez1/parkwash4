@@ -6,29 +6,18 @@
 </p>
 
 <p>
-  <strong>Discount amount:</strong>
-  <%= @wash.discount_amount %>
-</p>
-
-<p>
   <strong>Wash type:</strong>
-  <%= @wash.wash_type %>
+  <%= @wash.wash_type.name %>
 </p>
 
 <p>
   <strong>Washer:</strong>
-  <%= @wash.washer %>
+  <%= @wash.washer.first_name + " " + @wash.washer.last_name %>
 </p>
 
 <p>
   <strong>Vehicle:</strong>
-  <%= @wash.vehicle %>
+  <%= @wash.vehicle.patent %>
 </p>
 
-<p>
-  <strong>Receipt:</strong>
-  <%= @wash.receipt %>
-</p>
-
-<%= link_to 'Edit', edit_wash_path(@wash) %> |
-<%= link_to 'Back', washes_path %>
+<%= link_to 'Back', user_washes_path %>

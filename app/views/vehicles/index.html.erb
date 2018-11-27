@@ -1,39 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vehicles from <%= current_user.first_name + " " + current_user.last_name %></h1>
+<h1>Vehiculos de <%= current_user.first_name + " " + current_user.last_name %></h1>
 
-<table class="table table-striped table-responsive-xl">
-  <thead>
-    <tr>
-      <th>Patent</th>
-      <th>Type</th>
-      <th>Brand</th>
-      <th>Model</th>
-      <th>Color</th>
-      <th>Status</th>
-      <th>Vehicle size</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<% @user.vehicles.each do |vehicle| %>
 
-  <tbody>
-    <% @user.vehicles.each do |vehicle| %>
-      <tr>
-        <td><%= vehicle.patent %></td>
-        <td><%= vehicle.vehicle_type %></td>
-        <td><%= vehicle.brand %></td>
-        <td><%= vehicle.model %></td>
-        <td><%= vehicle.color %></td>
-        <td><%= vehicle.status %></td>
-        <td><%= vehicle.vehicle_size.name %></td>
-        <td><%= link_to 'Show', user_vehicle_path(@user, vehicle) %></td>
-        <td><%= link_to 'Edit', edit_user_vehicle_path(@user, vehicle) %></td>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="card" style="width: 36rem;">
+    <%= image_tag "vehicles/#{vehicle.patent}.jpg", class: "card-img-top", alt: "Card Image Cap" %>
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <h4 class="card-title"> <%= "#{vehicle.brand} #{vehicle.model}" %> </h4>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Patente: <%= "#{vehicle.patent}" %></li>
+      <li class="list-group-item">Tamaño: <%= "#{vehicle.vehicle_size.name}" %></li>
+      <li class="list-group-item">Tipo: <%= "#{vehicle.vehicle_type}" %></li>
+    </ul>
+    <div class="card-body">
+      <%= link_to 'Ver Lavados', user_washes_path(@user), class: "card-link btn btn-success" %>
+    </div>
+  </div>
+
+<% end %>
 
 <br>
 
-<%= link_to 'New Vehicle', new_user_vehicle_path(@user) %>
+<%= link_to 'Nuevo Vehículo', new_user_vehicle_path(@user), class: "btn btn-primary" %>
