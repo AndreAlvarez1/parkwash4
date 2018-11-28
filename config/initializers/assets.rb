@@ -27,7 +27,3 @@ Rails.application.config.assets.precompile += %w[*.jpg *.png *.svg *.gif *.bmp]
 
 #CHARTKICK ASSETS PRECOMPILE
 Rails.application.config.assets.precompile += %w( chartkick.js )
-
-#ATIVE ADMIN ASSETS PRECOMPILE
-Rails.application.config.assets.precompile += %w( admin/active_admin.js )
-Rails.application.config.assets.precompile += %w( admin/active_admin.css )
