@@ -63,6 +63,7 @@
 //= require public
 //
 //= stub active_admin
+//
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
