@@ -62,7 +62,7 @@
 //= require jquery.template.testimonial
 //= require public
 //
-//= stub active_admin.js
+//= stub active_admin
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

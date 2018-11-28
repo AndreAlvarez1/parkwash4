@@ -11,6 +11,13 @@ ActiveAdmin.setup do |config|
   config.meta_tags = meta_tags_options
   config.meta_tags_for_logged_out_pages = meta_tags_options
 
+  config.clear_stylesheets!
+  config.register_stylesheet 'admin/active_admin'
+
+  config.clear_javascripts!
+  config.register_javascript 'admin/active_admin'
+
+
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
