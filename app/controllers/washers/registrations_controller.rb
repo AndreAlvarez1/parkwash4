@@ -49,13 +49,13 @@ class Washers::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:rut, :first_name,
-      :last_name, :cellphone, :city, :birth_date, :role])
+      :last_name, :cellphone, :city, :role])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:rut, :first_name,
-      :last_name, :cellphone, :city, :birth_date, :role])
+      :last_name, :cellphone, :city, :role])
   end
 
   # The path used after sign up.
