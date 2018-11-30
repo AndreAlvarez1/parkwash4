@@ -2,13 +2,18 @@
 
   <div class="col-8">
 
-    <%= form_with(model: @vehicle, url: [current_user, @vehicle], local: true, id: "NewVehicleForm", html: {class: 'form'}) do |f| %>
-      <% if @vehicle.errors.any? %>
+        <%#
+        <%= form_for(user_vehicles_path,
+        html: {class: 'form'}
+        ) do |f| %>
+        
+    <%= form_with(model: vehicle, url: [current_user, vehicle], local: true, id: "NewVehicleForm", html: {class: 'form'}) do |f| %>
+      <% if vehicle.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+          <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
 
           <ul>
-          <% @vehicle.errors.full_messages.each do |message| %>
+          <% vehicle.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
           </ul>

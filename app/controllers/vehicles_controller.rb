@@ -33,11 +33,11 @@ class VehiclesController < ApplicationController
   def create
     # debugger
     @vehicle = Vehicle.create(vehicle_params)
+    @vehicle.user_id = current_user.id
     # render json: @vehicle.as_json
-
     respond_to do |format|
       if @vehicle.save
-        format.html { redirect_to vehicles_index_all_path, notice: 'Vehicle was successfully created.' }
+        format.html { redirect_to user_vehicles_path, notice: 'Vehicle was successfully created.' }
         # format.js
         format.json { render @vehicle, status: :created}
       else
@@ -79,6 +79,6 @@ class VehiclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
-      params.require(:vehicle).permit(:patent, :type, :brand, :model, :color, :status, :user_id, :vehicle_size_id)
+      params.require(:vehicle).permit(:patent, :vehicle_type, :brand, :model, :color, :status, :user_id, :vehicle_size_id)
     end
 end
