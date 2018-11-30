@@ -1,67 +1,79 @@
+<div class="row justify-content-center">
 
-<div class="container">
+  <div class="col-8">
 
-  <h1>New Vehicle</h1>
+    <%= form_for(new_user_vehicle_path,
+    html: {class: 'form'}
+    ) do |f| %>
 
-  <div class="row justify-content-center">
-    <div class="col-4">
+    <h2>Inicio de Sesión</h2>
 
-      <%= form_for(resource,
-      as: resource_name,
-      url: registration_path(resource_name),
-      html: {class: 'form'}
-      ) do |f| %>
-      <%= devise_error_messages! %>
+    <div class="row">
 
-      <h2>Sign up</h2>
+      <div class="col-md-4">
 
-      <div class="form-group">
-        <%= f.label :rut %><br />
-        <%= f.text_field :rut, autofocus: true, class: 'form-control'%>
+        <div class="form-group">
+          <%= f.label :patent %>
+          <%= f.text_field :patent,
+          autofocus: true,
+          class: 'form-control',
+          placeholder: 'ABCD-78'
+          %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :vehicle_type %><br />
+          <%= f.text_field :vehicle_type,
+          class: 'form-control' %>
+        </div>
+
       </div>
 
-      <div class="form-group">
-        <%= f.label :place_id %><br />
-        <%= f.collection_select :place_id,
-        Place.order(:name),:id,:name, include_blank: true,
-        class: 'form-control'%>
+      <div class="col-md-4">
+
+        <div class="form-group">
+          <%= f.label :brand %>
+          <%= f.text_field :brand,
+          class: 'form-control'
+          %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :model %><br />
+          <%= f.text_field :model,
+          class: 'form-control' %>
+        </div>
+
       </div>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+      <div class="col-md-4">
+
+        <div class="form-group">
+          <%= f.label :color %>
+          <%= f.text_field :color,
+          class: 'form-control'
+          %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :vehicle_size_id %><br />
+          <%= f.text_field :vehicle_size_id,
+          class: 'form-control' %>
+        </div>
+
       </div>
 
-      <div class="form-group">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password,
-        autocomplete: "off",
-        class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation,
-        autocomplete: "off",
-        class: 'form-control' %>
-      </div>
+    </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: 'btn btn-success' %>
+        <%= f.submit "Crear Vehículo", class: 'btn btn-success'  %>
+        <%= link_to 'Volver', user_vehicles_path, class: 'btn btn-danger' %>
       </div>
-      <%= render "devise/shared/links" %>
 
       <% end %>
 
-    </div>
   </div>
+</div>
 
-
-  <%= render 'form', vehicle: @vehicle %>
-
-  <%= link_to 'Back', user_vehicles_path %>
 
 </div>

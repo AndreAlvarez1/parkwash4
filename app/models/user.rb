@@ -19,7 +19,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   # validates :rut, presence: true, uniqueness: true
-  # validates :place_id, presence: true, inclusion: {in: [1, 2, 3]}, numericality: true
+  # validates :place, presence: true
+  # validates :place, presence: true, inclusion: {in: [1, 2, 3]}, numericality: true
 
   # app/models/user.rb
   def self.from_omniauth(auth)
