@@ -2,38 +2,27 @@
 
 <h1>Vehiculos de <%= current_user.first_name + " " + current_user.last_name %></h1>
 
-<div class="container row">
+  <div class="row">
+    <% @user.vehicles.each do |vehicle| %>
+      <div class="card" style="width: 36rem;">
+        <%= image_tag "vehicles/#{vehicle.patent}.jpg", class: "card-img-top", alt: "Card Image Cap" %>
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        <div class="card-body">
+          <h4 class="card-title"> <%= "#{vehicle.brand} #{vehicle.model}" %> </h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Patente: <%= "#{vehicle.patent}" %></li>
+          <li class="list-group-item">Tamaño: <%= "#{vehicle.vehicle_size.name}" %></li>
+          <li class="list-group-item">Tipo: <%= "#{vehicle.vehicle_type}" %></li>
+          <%= link_to 'Ver Lavados', user_washes_path(@user), class: "card-link btn btn-success" %>
+        </ul>
 
-<% @user.vehicles.each do |vehicle| %>
-
-  <div class="col-md-3">
-
-    <div class="card" style="width: 36rem;">
-      <%= image_tag "vehicles/#{vehicle.patent}.jpg", class: "card-img-top", alt: "Card Image Cap" %>
-      <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-      <div class="card-body">
-        <h4 class="card-title"> <%= "#{vehicle.brand} #{vehicle.model}" %> </h4>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Patente: <%= "#{vehicle.patent}" %></li>
-        <li class="list-group-item">Tamaño: <%= "#{vehicle.vehicle_size.name}" %></li>
-        <li class="list-group-item">Tipo: <%= "#{vehicle.vehicle_type}" %></li>
-      </ul>
-      <% end %>
-    </div>
-
+    <% end %>
   </div>
 
-</div>
+  <br>
 
-<div class="row">
-
-  <div class="card-body">
-    <%= link_to 'Ver Lavados', user_washes_path(@user), class: "card-link btn btn-success" %>
+  <div class="row">
+    <%= link_to 'Nuevo Vehículo', new_user_vehicle_path(@user), class: "btn btn-primary" %>
   </div>
-
-</div>
-
-<br>
-
-<%= link_to 'Nuevo Vehículo', new_user_vehicle_path(@user), class: "btn btn-primary" %>
