@@ -5,12 +5,8 @@ ActiveAdmin.register User do
 index do
   column :id
   column :email
-  column :created_at
-  column :email_provider do |user|
-    user.email.split('@').last.capitalize
-  end
-  column :member_since do |user|
-    time_ago_in_words(user.created_at)
+  column :full_name do |user|
+    user.first_name + " " + user.last_name
   end
   actions
 end
@@ -31,6 +27,9 @@ end
 
 filter :email, as: :select
 
+# column :member_since do |user|
+#   time_ago_in_words(user.created_at)
+# end
 
 
 end

@@ -42,6 +42,13 @@ gem 'chartkick'
 gem 'groupdate'
 # Template for ActiveAdmin
 gem 'arctic_admin'
+# Makes Rails Console Pretty
+gem 'awesome_print', require:'ap'
+# Rails Panel for Chrome
+gem 'meta_request'
+# Gem for Better Error Page
+gem "better_errors", group: :development
+gem "binding_of_caller", group: :development
 
 
 # Use CoffeeScript for .coffee assets and views

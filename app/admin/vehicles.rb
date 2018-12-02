@@ -1,15 +1,19 @@
 ActiveAdmin.register Vehicle do
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+
+  index do
+    column :id
+    column :patent
+    column :vehicle_type
+    column :brand
+    column :model
+    column :color
+    column :vehicle_size do |vehicle|
+      vehicle.vehicle_size.name
+    end
+    column :user do |vehicle|
+      vehicle.user.first_name + " " + vehicle.user.last_name
+    end
+    actions
+  end
 
 end
