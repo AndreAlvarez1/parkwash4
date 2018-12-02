@@ -1,5 +1,5 @@
 class WashTypesController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   before_action :set_wash_type, only: [:show, :edit, :update, :destroy]
 
   # GET /wash_types

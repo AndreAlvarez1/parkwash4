@@ -14,7 +14,7 @@
           <li class="list-group-item">Patente: <%= "#{vehicle.patent}" %></li>
           <li class="list-group-item">Tamaño: <%= "#{vehicle.vehicle_size.name}" %></li>
           <li class="list-group-item">Tipo: <%= "#{vehicle.vehicle_type}" %></li>
-          <%= link_to 'Ver Lavados', user_washes_path(@user), class: "card-link btn btn-success" %>
+          <%= link_to 'Ver Lavados', user_washes_path(@user, {vehicle_patent: vehicle.patent}), class: "card-link btn btn-success" %>
         </ul>
 
       </div>

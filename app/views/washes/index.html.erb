@@ -16,7 +16,6 @@
     <tr>
       <th>ID</th>
       <th>Creation date</th>
-      <th>Discount amount</th>
       <th>Wash type</th>
       <th>Washer Name</th>
       <th>Vehicle Patent</th>
@@ -27,15 +26,29 @@
 
   <tbody>
     <% @user.washes.each do |wash| %>
-      <tr>
-        <td><%= wash.id %></td>
-        <td><%= wash.creation_date %></td>
-        <td><%= wash.wash_type.name %></td>
-        <td><%= wash.washer.first_name %></td>
-        <td><%= wash.vehicle.patent %></td>
-        <td><%= wash.receipt.id %></td>
-        <td><%= link_to 'Ver', user_wash_path({user_id: @user.id}, wash) %></td>
-      </tr>
+      <% if @show_by_patent %>
+        <% if @vehicle_patent == wash.vehicle.patent %>
+          <tr>
+            <td><%= wash.id %></td>
+            <td><%= wash.creation_date %></td>
+            <td><%= wash.wash_type.name %></td>
+            <td><%= wash.washer.first_name %></td>
+            <td><%= wash.vehicle.patent %></td>
+            <td><%= wash.receipt.id %></td>
+            <td><%= link_to 'Ver', user_wash_path({user_id: @user.id}, wash) %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td><%= wash.id %></td>
+          <td><%= wash.creation_date %></td>
+          <td><%= wash.wash_type.name %></td>
+          <td><%= wash.washer.first_name %></td>
+          <td><%= wash.vehicle.patent %></td>
+          <td><%= wash.receipt.id %></td>
+          <td><%= link_to 'Ver', user_wash_path({user_id: @user.id}, wash) %></td>
+        </tr>
+      <% end  %>
     <% end %>
   </tbody>
 </table>

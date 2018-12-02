@@ -8,6 +8,13 @@ class WashesController < ApplicationController
   def index
     @washes = Wash.all
     @user = current_user
+    @show_by_patent = false
+    if params[:vehicle_patent].present?
+      @vehicle_patent = params[:vehicle_patent]
+      @show_by_patent = true
+    end
+
+
   end
 
   def index_all

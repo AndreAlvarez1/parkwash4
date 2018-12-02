@@ -8,8 +8,6 @@ class Ability
 
     if user.class == User
 
-      can :manage, Page # if the user is or is not logged in, he can see the homepage
-
       return unless user.present?
 
       # Permits regarding USERS

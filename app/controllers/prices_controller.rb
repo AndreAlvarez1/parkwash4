@@ -1,5 +1,5 @@
 class PricesController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   before_action :set_price, only: [:show, :edit, :update, :destroy]
 
   # GET /prices

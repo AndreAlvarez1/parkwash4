@@ -1,5 +1,5 @@
 class WashersController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
 
   def index
     @washer = current_washer
