@@ -37,16 +37,13 @@
 
   <body>
 
-
-    <% if notice.present? %>
-      <div class="alert alert-primary"> <%= notice %> </div>
-    <% end %>
-
-    <% if alert.present? %>
-      <div class="alert alert-danger"> <%= alert %> </div>
-    <% end %>
-
+    <%= render "layouts/alerts" %>
+    
     <%= yield %>
+
+    <script>
+      $(".alert" ).delay(1000).fadeOut(3000);
+    </script>
 
 
     <!-- Latest compiled and minified JavaScript -->

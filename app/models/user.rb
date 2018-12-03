@@ -35,5 +35,9 @@ class User < ApplicationRecord
     group_by_day(:created_at).count
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 
 end
