@@ -1,47 +1,86 @@
-<%= form_with(model: @wash, url: [current_user, @wash]) do |form| %>
-  <% if wash.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(wash.errors.count, "error") %> prohibited this wash from being saved:</h2>
+<div class="row justify-content-center">
 
-      <ul>
-      <% wash.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <div class="col-8">
+
+    <%= form_with(model: @wash, url: [current_user, @wash], id: "NewWashForm", html: {class: 'form'}) do |form| %>
+      <% if wash.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(wash.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+          <ul>
+          <% wash.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+
+    <h2>Agregar un Lavado</h2>
+
+    <div class="row">
+
+      <div class="col-md-4">
+
+        <div class="form-group">
+          <%= form.label :creation_date %>
+          <%= form.date_select :creation_date,
+          autofocus: true,
+          class: 'form-control'
+          %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :discount_amount %>
+          <%= form.number_field :discount_amount,
+          class: 'form-control' %>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="form-group">
+          <%= form.label :wash_type_id %>
+          <%= form.text_field :wash_type_id,
+          class: 'form-control'
+          %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :washer_id %>
+          <%= form.text_field :washer_id,
+          class: 'form-control' %>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="form-group">
+          <%= form.label :vehicle_id %>
+          <%= form.text_field :vehicle_id,
+          class: 'form-control'
+          %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :receipt_id %>
+          <%= form.text_field :receipt_id,
+          class: 'form-control' %>
+        </div>
+
+      </div>
+
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :creation_date %>
-    <%= form.date_select :creation_date %>
-  </div>
+      <div class="actions">
+        <%= form.submit "Crear Lavado", class: 'btn btn-success'  %>
+      </div>
 
-  <div class="field">
-    <%= form.label :discount_amount %>
-    <%= form.number_field :discount_amount %>
-  </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :wash_type_id %>
-    <%= form.text_field :wash_type_id %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :washer_id %>
-    <%= form.text_field :washer_id %>
-  </div>
 
-  <div class="field">
-    <%= form.label :vehicle_id %>
-    <%= form.text_field :vehicle_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :receipt_id %>
-    <%= form.text_field :receipt_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

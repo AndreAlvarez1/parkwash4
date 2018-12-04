@@ -5,7 +5,11 @@
   <div class="row">
     <% @user.vehicles.each do |vehicle| %>
       <div class="card" style="width: 36rem;">
-        <%= image_tag "vehicles/#{vehicle.patent}.jpg", class: "card-img-top", alt: "Card Image Cap" %>
+
+        <% img_path = "app/assets/images/vehicles/#{vehicle.patent}.jpg" %>
+        <% if File.exist?(img_path) %>
+          <%= image_tag "vehicles/#{vehicle.patent}.jpg", class: "card-img-top", alt: "Card Image Cap" %>
+        <% end  %>
         <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
           <h4 class="card-title"> <%= "#{vehicle.brand} #{vehicle.model}" %> </h4>
@@ -14,7 +18,8 @@
           <li class="list-group-item">Patente: <%= "#{vehicle.patent}" %></li>
           <li class="list-group-item">Tamaño: <%= "#{vehicle.vehicle_size.name}" %></li>
           <li class="list-group-item">Tipo: <%= "#{vehicle.vehicle_type}" %></li>
-          <%= link_to 'Ver Lavados', user_washes_path(@user, {vehicle_patent: vehicle.patent}), class: "card-link btn btn-success" %>
+          <li> <%= link_to 'Ver Lavados', user_washes_path(@user, {vehicle_patent: vehicle.patent}), class: "card-link btn btn-success" %></li>
+          <li> <%= link_to 'Eliminar Vehículo', user_vehicle_path(@user, vehicle), method: :delete, class: "card-link btn btn-danger" %></li>
         </ul>
 
       </div>

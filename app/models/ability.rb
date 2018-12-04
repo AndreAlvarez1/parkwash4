@@ -11,9 +11,9 @@ class Ability
       return unless user.present?
 
       # Permits regarding USERS
-      can :read, User, user_id: user.id # if the user is logged in, he can read its profile
-      can :update, User, user_id: user.id # if the user is logged in, he can update its profile
-      can :edit, User, user_id: user.id # if the user is logged in, he can edit its profile
+      can :read, User, id: user.id # if the user is logged in, he can read its profile
+      can :update, User, id: user.id # if the user is logged in, he can update its profile
+      can :edit, User, id: user.id # if the user is logged in, he can edit its profile
 
     elsif user.class == Washer
 
