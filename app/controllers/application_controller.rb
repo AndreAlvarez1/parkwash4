@@ -13,4 +13,5 @@ class ApplicationController < ActionController::Base
     @current_ability ||= current_washer ? Ability.new(current_washer) : Ability.new(current_user)
   end
 
+
 end

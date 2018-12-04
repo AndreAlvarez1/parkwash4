@@ -29,6 +29,10 @@
  *= require_self
  */
 
-a.btn.btn-primary:visited {
+/* a.btn.btn-primary:visited {
   color : lightblue;
+} */
+
+body {
+  margin-left: 2em;
 }

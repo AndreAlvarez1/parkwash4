@@ -1,3 +1,6 @@
+<%= render "layouts/navbar" %>
+
+
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
 	<div class="row">
@@ -17,7 +20,11 @@
                 </div>
                 <div class="col-xs-12 col-sm-4 text-center">
                     <figure>
-                        <img src="https://randomuser.me/api/portraits/women/<%=@user.id%>.jpg " alt="" class="img-circle img-responsive">
+												<% if @user.gender == "male" %>
+                        	<img src="https://randomuser.me/api/portraits/men/<%=@user.id%>.jpg " alt="" class="img-circle img-responsive">
+												<% else %>
+													<img src="https://randomuser.me/api/portraits/women/<%=@user.id%>.jpg " alt="" class="img-circle img-responsive">
+												<% end  %>
                         <figcaption class="ratings">
                             <p>Ratings
                             <a href="#">
@@ -47,7 +54,7 @@
                     <button class="btn btn-success btn-block" onclick="location.href='<%= user_washes_path(@user) %>'"><span class="fa fa-plus-circle"></span>Ver Lavados</button>
                 </div>
                 <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong>2</strong></h2>
+                  <h2><strong> <%= @user.vehicles.count %> </strong></h2>
                     <p><small>Vehículos</small></p>
                     <button class="btn btn-info btn-block" onclick="location.href='<%= user_vehicles_path(@user) %>'"><span class="fa fa-user"></span> Ver Vehículos </button>
                 </div>

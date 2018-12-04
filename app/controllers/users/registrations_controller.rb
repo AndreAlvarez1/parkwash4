@@ -44,15 +44,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     # debugger
     devise_parameter_sanitizer.permit(:sign_up, keys: [:rut, :first_name,
-      :last_name, :cellphone, :city, :card_status, :transdata_id,
+      :last_name, :cellphone, :gender, :city, :card_status, :transdata_id,
       :place_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:rut, :first_name,
-      :last_name, :cellphone, :city, :card_status, :transdata_id,
+      :last_name, :cellphone, :gender, :city, :card_status, :transdata_id,
       :place_id])
+   end
+
+   def after_sign_up_path_for(resource)
+     user_path(resource)
    end
 
   # The path used after sign up.

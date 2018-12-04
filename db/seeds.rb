@@ -40,10 +40,11 @@ csv_file.each do |row|
   x.last_name = array[2]
   x.email = array[3]
   x.cellphone = array[4]
-  x.city = array[5]
-  x.card_status = array[6].to_s == "true"
-  x.transdata_id = array[7]
-  x.place_id = array[8].to_i
+  x.gender = array[5]
+  x.city = array[6]
+  x.card_status = array[7].to_s == "true"
+  x.transdata_id = array[8]
+  x.place_id = array[9].to_i
   x.password = '111111'
   x.save
   puts "Errors: #{x.errors.messages}"
