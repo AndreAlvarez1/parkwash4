@@ -38,6 +38,5 @@ test:
 production:
   adapter: postgresql
   database: parkwash_rails_v2_production
-  password: '111111'
   pool: 5
   timeout: 5000

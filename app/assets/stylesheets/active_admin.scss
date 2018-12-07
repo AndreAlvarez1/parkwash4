@@ -8,8 +8,12 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
+$primary-color: #2dbb43;
+//
 @import "active_admin/mixins";
 @import "arctic_admin/base";
+//@import "active_admin_datetimepicker";
+
 
 
 // Overriding any non-variable SASS must be done after the fact.
