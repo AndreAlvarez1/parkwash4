@@ -32,7 +32,8 @@ Rails.application.routes.draw do
         }
 
   devise_for :washers, controllers: {
-          registrations: 'washers/registrations'
+          registrations: 'washers/registrations',
+          sessions: 'washers/sessions'
         }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

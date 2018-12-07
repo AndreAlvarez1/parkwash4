@@ -10,9 +10,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # NOT WORKING! UNDERSTAND WHY.
-  private
-  def full_name
-    "#{this.first_name} #{this.last_name}"
-  end
 end

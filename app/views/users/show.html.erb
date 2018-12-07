@@ -49,7 +49,7 @@
             </div>
             <div class="col-xs-12 divider text-center">
                 <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong> 121 </strong></h2>
+                    <h2><strong> <%= @user.washes.count %> </strong></h2>
                     <p><small>Lavados</small></p>
                     <button class="btn btn-success btn-block" onclick="location.href='<%= user_washes_path(@user) %>'"><span class="fa fa-plus-circle"></span>Ver Lavados</button>
                 </div>
@@ -59,7 +59,7 @@
                     <button class="btn btn-info btn-block" onclick="location.href='<%= user_vehicles_path(@user) %>'"><span class="fa fa-user"></span> Ver Vehículos </button>
                 </div>
                 <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong>10</strong></h2>
+									<h2><strong> <%= @user.receipts.count %> </strong></h2>
                     <p><small>Pagos</small></p>
                     <button class="btn btn-danger btn-block" onclick="location.href='<%= user_receipts_path(@user) %>'"><span class="fa fa-gear"></span> Ver Boletas </button>
                 </div>

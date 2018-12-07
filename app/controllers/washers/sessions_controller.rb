@@ -4,26 +4,19 @@ class Washers::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  def new
-    debugger
-    super
-    redirect_to pages_index_washers_path
-  end
+  # def new
+  #   super
+  # end
 
   # POST /resource/sign_in
-  def create
-    debugger
-    super
-    redirect_to pages_index_washers_path
-
-  end
+  # def create
+  #   super
+  # end
 
   # DELETE /resource/sign_out
-  def destroy
-    debugger
-    super
-    redirect_to pages_index_washers_path
-  end
+  # def destroy
+  #   super
+  # end
 
   # protected
 
@@ -31,4 +24,9 @@ class Washers::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  def after_sign_in_path_for(resource)
+    pages_index_washers_path
+  end
+
 end
