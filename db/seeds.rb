@@ -4,7 +4,7 @@
 
 require 'csv'
 
-AdminUser.create!(email: 'nicoalamo2@gmail.com', password: '111111', password_confirmation: '111111') if Rails.env.development?
+AdminUser.create!(email: 'admin@gmail.com', password: '111111', password_confirmation: '111111')
 
 
 errors = []
@@ -256,4 +256,3 @@ puts "There are now #{Payment.count} rows in the Payments table"
 puts "There are now #{CreditNote.count} rows in the CreditNotes table"
 puts "There are now #{Reconciliation.count} rows in the Reconciliations table"
 puts "There are now #{Wash.count} rows in the Washes table"
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
