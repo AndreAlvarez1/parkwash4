@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_231759) do
+ActiveRecord::Schema.define(version: 2018_12_20_232508) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -120,12 +120,10 @@ ActiveRecord::Schema.define(version: 2018_12_03_231759) do
     t.string "city"
     t.boolean "card_status"
     t.string "transdata_id"
-    t.integer "place_id"
     t.string "provider"
     t.string "uid"
     t.string "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["place_id"], name: "index_users_on_place_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -148,6 +146,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_231759) do
     t.integer "vehicle_size_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "place_id"
     t.index ["user_id"], name: "index_vehicles_on_user_id"
     t.index ["vehicle_size_id"], name: "index_vehicles_on_vehicle_size_id"
   end

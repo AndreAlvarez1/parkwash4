@@ -7,7 +7,6 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
 
   #RELATIONS WITH OTHER MODELS
-  belongs_to :place
   has_many :vehicles, dependent: :delete_all
   has_many :washes, through: :vehicles
   has_many :receipts

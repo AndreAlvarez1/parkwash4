@@ -28,6 +28,7 @@ gem 'uglifier', '>= 1.3.0'
 gem "devise", git: 'https://github.com/plataformatec/devise.git'
 #ERD Diagrams
 gem 'rails-erd', require: false, group: :development
+gem 'ruby-graphviz'
 #CANCANCAN
 gem 'cancancan'
 # Gem for omniauth-devise

@@ -37,7 +37,8 @@
             </div>
             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Iniciar Sesión</button>
             <hr class="my-4">
-            <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit">Iniciar Sesión con Facebook</button>
+            <%= link_to "Iniciar Sesión con Facebook", omniauth_authorize_path(resource_name, :facebook), class: "btn btn-lg btn-facebook btn-block text-uppercase" %><br />
+            <!-- <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit">Iniciar Sesión con Facebook</button> -->
           </form>
         </div>
       </div>

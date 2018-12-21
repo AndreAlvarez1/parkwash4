@@ -2,6 +2,7 @@ class Vehicle < ApplicationRecord
 
   #RELATIONS WITH OTHER MODELS
   belongs_to :user
+  belongs_to :place
   belongs_to :vehicle_size
   has_many :washes
 

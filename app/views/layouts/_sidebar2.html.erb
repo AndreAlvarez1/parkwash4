@@ -1,0 +1,173 @@
+<!-- aside -->
+<div id="aside" class="app-aside modal nav-dropdown">
+  <!-- fluid app aside -->
+  <div class="left navside deep-orange-500 dk" data-layout="column">
+    <div class="navbar no-radius">
+      <!-- brand -->
+      <div class="navbar-brand">
+        <img src="<%= asset_path 'logo.png'%>" alt=".">
+        <span class="hidden-folded inline logo_gournet">Gour-net</span>
+      </div>
+      <!-- / brand -->
+    </div>
+    <div flex class="hide-scroll">
+      <nav class="scroll nav-active-primary">
+
+          <ul class="nav" ui-nav>
+            <li class="nav-header hidden-folded">
+              <small class="text-muted">Main</small>
+            </li>
+
+
+            <li>
+              <a href="<%= root_path%>" >
+                <span class="nav-icon">
+                  <i class="material-icons">home
+                  </i>
+                </span>
+                <span class="nav-text">Empresas</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="<%= root_path%>" >
+                <span class="nav-icon">
+                  <i class="material-icons">payment
+                  </i>
+                </span>
+                <span class="nav-text">Razones Sociales</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="<%= root_path%>" >
+                <span class="nav-icon">
+                  <i class="material-icons">store_mall_directory
+                  </i>
+                </span>
+                <span class="nav-text">Locales</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="<%= root_path%>" >
+                <span class="nav-icon">
+                  <i class="material-icons">textsms
+                  </i>
+                </span>
+                <span class="nav-text">Tickets</span>
+              </a>
+            </li>
+
+
+            <li>
+              <a>
+                <span class="nav-caret">
+                  <i class="fa fa-caret-down"></i>
+                </span>
+
+                <span class="nav-icon">
+                  <i class="material-icons">https</i>
+                </span>
+                <span class="nav-text">Admin</span>
+              </a>
+              <ul class="nav-sub">
+                <li>
+                  <a href="<%= root_path%>" >
+                    <span class="nav-text">Tipos de problemas</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= root_path%>" >
+                    <span class="nav-text">Estados</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= root_path%>" >
+                    <span class="nav-text">Panel de control</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+
+
+          </ul>
+      </nav>
+    </div>
+    <% if user_signed_in? %>
+    <div class="b-t">
+      <div class="nav-fold">
+        <a href="<%= root_path%>">
+            <span class="pull-left">
+              <img src="<%= asset_path 'logo.png'%>" alt="..." class="w-40 img-circle">
+            </span>
+            <span class="clear hidden-folded p-x">
+              <span class="block _500">Tickets</span>
+              <span class="block _500"></span>
+              <small class="block ">Pendientes: </small>
+            </span>
+        </a>
+      </div>
+    </div>
+    <%end %>
+  </div>
+</div>
+<!-- / -->
+
+<!-- content -->
+<div id="content" class="app-content box-shadow-z0" role="main">
+  <div class="app-header white box-shadow">
+      <div class="navbar navbar-toggleable-sm flex-row align-items-center">
+          <!-- Open side - Naviation on mobile -->
+          <a data-toggle="modal" data-target="#aside" class="hidden-lg-up mr-3">
+            <i class="material-icons">&#xe5d2;</i>
+          </a>
+          <!-- / -->
+
+          <!-- navbar collapse -->
+          <div class="collapse navbar-collapse" id="collapse">
+            <ul class="nav navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                  <span>Gour-net Soporte</span>
+                  <span id="notice"><%= notice %></span>
+                  <span class="alert"><%= alert %></span>
+
+
+              </li>
+            </ul>
+          </div>
+          <!-- / navbar collapse -->
+
+
+          <!-- navbar right -->
+          <ul class="nav navbar-nav ml-auto flex-row">
+            <% if user_signed_in? %>
+                <li class="nav-item dropdown">
+                  <a href="" class="nav-link dropdown-toggle clear" data-toggle="dropdown" aria-expanded="false">
+                    <span><%= current_user.full_name %></span>
+                    <span class="avatar w-32">
+                      <img src="<%= asset_path 'logo.png'%>" alt="...">
+                      <i class="on b-white bottom"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu pull-right dropdown-menu-scale">
+                    <a class="dropdown-item" href="<%= edit_user_registration_path%>">Editar perfil</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="<%= destroy_user_session_path%>" data-method="GET">Cerrar Sesión</a>
+                  </div>
+                </li>
+            <% else %>
+            <li class="nav-item dropdown">
+              <a class="nav-link p-0 clear" href="#" data-toggle="dropdown">
+                <li><a href="<%= new_user_session_path %>">Ingresar </a></li> |
+                <li><a href="<%= new_user_registration_path %>"> Registrarme</a></li>
+              </a>
+            </li>
+            <% end %>
+
+          </ul>
+          <!-- / navbar right -->
+      </div>
+  </div>
