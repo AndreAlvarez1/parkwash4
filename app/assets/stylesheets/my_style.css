@@ -9,3 +9,7 @@
 .template-component-menu-default>.sf-menu>li>a {
     line-height: 100%;
 }
+
+.navbar {
+    margin-bottom: 0px;
+}
