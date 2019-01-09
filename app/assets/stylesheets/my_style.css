@@ -13,3 +13,7 @@
 .navbar {
     margin-bottom: 0px;
 }
+
+#content-title {
+  display: inline;
+}

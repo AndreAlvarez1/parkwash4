@@ -35,10 +35,11 @@ Rails.application.routes.draw do
           registrations: 'washers/registrations',
           sessions: 'washers/sessions'
         }
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :washers, only: [:index, :show]
-  resources :users, only: [:index, :show, :edit] do
+  resources :users, only: [:index, :show] do
     resources :vehicles
     resources :washes
     resources :receipts
