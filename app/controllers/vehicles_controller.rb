@@ -34,6 +34,7 @@ class VehiclesController < ApplicationController
     # debugger
     @vehicle = Vehicle.create(vehicle_params)
     @vehicle.user_id = current_user.id
+    @vehicle.vehicle_size = 0
     # render json: @vehicle.as_json
     respond_to do |format|
       if @vehicle.save
