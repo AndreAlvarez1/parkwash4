@@ -9,7 +9,7 @@
         <h1>Vehiculos de <%= current_user.first_name + " " + current_user.last_name %></h1>
   </div>
 
-    <div class="container row">
+    <div id="vehicle-cards" class="container row">
       <% @user.vehicles.each do |vehicle| %>
         <div class="card" style="width: 36rem;">
 

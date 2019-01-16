@@ -17,3 +17,7 @@
 #content-title {
   display: inline;
 }
+
+#vehicle-cards {
+  flex-wrap: inherit;
+}

@@ -74,7 +74,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <%= f.label "Recinto de Lavado" %><br />
-            <%= f.select :name, Place.names.keys.to_a,
+            <%= f.collection_select :place_id, @places, :id, :name, :prompt => "Selecciona un recinto",
             class: 'form-control' %>
           </div>
         </div>

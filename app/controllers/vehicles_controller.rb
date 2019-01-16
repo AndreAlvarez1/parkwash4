@@ -7,6 +7,7 @@ class VehiclesController < ApplicationController
   def index
     @vehicles = Vehicle.all
     @user = current_user
+    @places = Place.all
   end
 
   def index_all
@@ -22,6 +23,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles/new
   def new
     @vehicle = Vehicle.new
+    @places = Place.all
   end
 
   # GET /vehicles/1/edit
@@ -34,7 +36,7 @@ class VehiclesController < ApplicationController
     # debugger
     @vehicle = Vehicle.create(vehicle_params)
     @vehicle.user_id = current_user.id
-    @vehicle.vehicle_size = 0
+    @vehicle.vehicle_size = VehicleSize.first
     # render json: @vehicle.as_json
     respond_to do |format|
       if @vehicle.save

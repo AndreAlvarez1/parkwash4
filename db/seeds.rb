@@ -44,7 +44,6 @@ csv_file.each do |row|
   x.city = array[6]
   x.card_status = array[7].to_s == "true"
   x.transdata_id = array[8]
-  x.place_id = array[9].to_i
   x.password = '111111'
   x.save
   puts "Errors: #{x.errors.messages}"
@@ -137,6 +136,7 @@ csv_file.each do |row|
   x.status = array[5].to_s == "true"
   x.user_id = array[6].to_i
   x.vehicle_size_id = array[7].to_i
+  x.place_id = 1
   x.save
   puts "Errors: #{x.errors.messages}"
   errors << x.errors.messages
