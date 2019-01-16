@@ -21,3 +21,12 @@
 #vehicle-cards {
   flex-wrap: inherit;
 }
+
+#main-content {
+  margin-top: 1%;
+  float:left;
+}
+
+#washes-table {
+  width: 200%;
+}

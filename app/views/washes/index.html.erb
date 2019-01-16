@@ -2,52 +2,58 @@
 <%= render "layouts/navbar" %>
 <%= render "layouts/sidebar3" %>
 
+<div id="main-content">
 
-<h1>Washes</h1>
 
-<table class="table table-striped table-responsive-xl">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Creation date</th>
-      <th>Wash type</th>
-      <th>Washer Name</th>
-      <th>Vehicle Patent</th>
-      <th>Receipt Id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div id="washes-table" class="container">
 
-  <tbody>
-    <% @user.washes.each do |wash| %>
-      <% if @show_by_patent %>
-        <% if @vehicle_patent == wash.vehicle.patent %>
-          <tr>
-            <td><%= wash.id %></td>
-            <td><%= wash.creation_date %></td>
-            <td><%= wash.wash_type.name %></td>
-            <td><%= wash.washer.first_name %></td>
-            <td><%= wash.vehicle.patent %></td>
-            <td><%= wash.receipt.id %></td>
-            <td><%= link_to 'Ver', user_wash_path({user_id: @user.id}, wash) %></td>
-          </tr>
-        <% end %>
-      <% else %>
+    <h1>Mis Lavados Realizados</h1>
+
+    <table class="table table-striped table-hover table-responsive-sm">
+      <thead>
         <tr>
-          <td><%= wash.id %></td>
-          <td><%= wash.creation_date %></td>
-          <td><%= wash.wash_type.name %></td>
-          <td><%= wash.washer.first_name %></td>
-          <td><%= wash.vehicle.patent %></td>
-          <td><%= wash.receipt.id %></td>
-          <td><%= link_to 'Ver', user_wash_path({user_id: @user.id}, wash) %></td>
+          <th>ID</th>
+          <th>Creation date</th>
+          <th>Wash type</th>
+          <th>Washer Name</th>
+          <th>Vehicle Patent</th>
+          <th>Ver Detalle</th>
+          <th colspan="3"></th>
         </tr>
-      <% end  %>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<%= link_to 'Volver a Mi Perfil', user_path(@user), class: "btn btn-primary" %>
+      <tbody>
+        <% @user.washes.each do |wash| %>
+          <% if @show_by_patent %>
+            <% if @vehicle_patent == wash.vehicle.patent %>
+              <tr>
+                <td><%= wash.id %></td>
+                <td><%= wash.creation_date %></td>
+                <td><%= wash.wash_type.name %></td>
+                <td><%= wash.washer.first_name %></td>
+                <td><%= wash.vehicle.patent %></td>
+                <td><%= link_to 'Ver', user_wash_path({user_id: @user.id}, wash) %></td>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr>
+              <td><%= wash.id %></td>
+              <td><%= wash.creation_date %></td>
+              <td><%= wash.wash_type.name %></td>
+              <td><%= wash.washer.first_name %></td>
+              <td><%= wash.vehicle.patent %></td>
+              <td><%= link_to 'Ver', user_wash_path({user_id: @user.id}, wash) %></td>
+            </tr>
+          <% end  %>
+        <% end %>
+      </tbody>
+    </table>
 
-<br>
-<br>
+    <%= link_to 'Volver a Mi Perfil', user_path(@user), class: "btn btn-primary" %>
+
+    <br>
+    <br>
+
+
+  </div>
+</div>
