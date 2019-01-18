@@ -3,72 +3,71 @@
 
 <div id="main-content">
 
-	<div class="container">
-
-
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+	<div class="cont_mis_datos">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
-		    	 <div class="well profile">
-		            <div class="col-sm-12">
-		                <div class="col-xs-12 col-sm-8">
-		                    <h2><%= @user.full_name %></h2>
-		                    <p><strong>Email: </strong> <%= @user.email %> </p>
-		                    <p><strong>RUT: </strong> <%= @user.rut %> </p>
-		                    <p><strong>Ciudad:: </strong> <%= @user.city %> </p>
-		                </div>
-		                <div class="col-xs-12 col-sm-4 text-center">
-		                    <figure>
-														<% if @user.gender == "male" %>
-		                        	<img src="https://randomuser.me/api/portraits/men/<%=@user.id%>.jpg " alt="" class="img-circle img-responsive">
-														<% else %>
-															<img src="https://randomuser.me/api/portraits/women/<%=@user.id%>.jpg " alt="" class="img-circle img-responsive">
-														<% end  %>
-		                        <figcaption class="ratings">
-		                            <!-- <p>Ratings
-		                            <a href="#">
-		                                <span class="fa fa-star"></span>
-		                            </a>
-		                            <a href="#">
-		                                <span class="fa fa-star"></span>
-		                            </a>
-		                            <a href="#">
-		                                <span class="fa fa-star"></span>
-		                            </a>
-		                            <a href="#">
-		                                <span class="fa fa-star"></span>
-		                            </a>
-		                            <a href="#">
-		                                 <span class="fa fa-star-o"></span>
-		                            </a>
-		                            </p> -->
-		                        </figcaption>
-		                    </figure>
-		                </div>
-		            </div>
-		            <div class="col-xs-12 divider text-center">
-		                <div class="col-xs-12 col-sm-4 emphasis">
-		                    <h2><strong> <%= @user.washes.count %> </strong></h2>
-		                    <p><small>Lavados</small></p>
-		                    <button class="btn btn-success btn-block" onclick="location.href='<%= user_washes_path(@user) %>'"><span class="fa fa-plus-circle"></span>Ver Lavados</button>
-		                </div>
-		                <div class="col-xs-12 col-sm-4 emphasis">
-		                  <h2><strong> <%= @user.vehicles.count %> </strong></h2>
-		                    <p><small>Vehículos</small></p>
-		                    <button class="btn btn-info btn-block" onclick="location.href='<%= user_vehicles_path(@user) %>'"><span class="fa fa-user"></span> Ver Vehículos </button>
-		                </div>
-		                <div class="col-xs-12 col-sm-4 emphasis">
-											<h2><strong> <%= @user.receipts.count %> </strong></h2>
-		                    <p><small>Pagos</small></p>
-		                    <button class="btn btn-danger btn-block" onclick="location.href='<%= user_receipts_path(@user) %>'"><span class="fa fa-gear"></span> Ver Boletas </button>
-		                </div>
-		            </div>
-		    	 </div>
-				</div>
-			</div>
+			<h1>Mis datos</h1>
 		</div>
+		<div class="container container_datos">
+			<div class="dato_main">
+				<h2>Datos de Usuario:</h2>
+					<%= image_tag "icons/b-profile.png", alt: "Big Profile",  id: "user-pic" %>
+				<ul>
+					<div class="row">
+						<li><%= image_tag "icons/ico-mail.png", alt: "Profile icon" %> Nombre de Usuario (E-mail): <span>nicoalamo@gmail.com</span></li>
+					</div>
+					<div class="row">
+						<li><%= image_tag "icons/ico-candado.png", alt: "Profile icon" %> Contraseña: ****** </li>
+					</div>
+					<div class="row">
+						<li><%= image_tag "icons/icon-editar.png", alt: "Profile icon" %> Cambiar contraseña </li>
+					</div>
+				</ul>
 
+			</div>
+
+			<div id="contDatosSinEdit" class="cont_dato mas_datos datos_arriba">
+
+				<h2>Datos personales:</h2>
+
+				<ul>
+					<li class="icon-dato"><%= image_tag "icons/ico-profile.png", alt: "Profile icon" %></li>
+					<li>Nombre completo:</li>
+					<li>Nicolas Alamo Salazar</li>
+				</ul>
+
+				<ul>
+					<li class="icon-dato"><%= image_tag "icons/ico-cel.png", alt: "Cel Icon" %></li>
+					<li>Rut:</li>
+					<li>21.512.412-4</li>
+				</ul>
+
+				<ul>
+					<li class="icon-dato"><%= image_tag "icons/ico-map.png", alt: "Map icon" %></li>
+					<li>Dirección de contacto:</li>
+					<li>Los Trigales 7887, Apartment 305, LAS CONDES,&nbspXIII Región Metropolitana</li>
+				</ul>
+
+				<ul>
+					<li class="icon-dato"><%= image_tag "icons/ico-cel.png", alt: "Cel Icon" %></li>
+					<li>Teléfono de contacto:</li>
+					<li>56 9 92513342</li>
+				</ul>
+
+				<ul>
+					<li class="icon-dato"><%= image_tag "icons/icon-calendar.png", alt: "Calendar Icon" %></li>
+					<li>Fecha de nacimiento:</li>
+					<li>27/12/1986</li>
+				</ul>
+
+				<ul>
+					<li class="icon-dato">Género:</li>
+					<li><input type="radio" checked disabled="disabled" /> Masculino</li>
+					<li><input type="radio"  disabled="disabled" /> Femenino</li>
+				</ul>
+
+
+			</div>
+
+		</div>
 	</div>
-
 </div>

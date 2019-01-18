@@ -30,3 +30,108 @@
 #washes-table {
   width: 200%;
 }
+
+#user-pic{
+  margin-right: 30px;
+}
+
+.cont_dato .txt_right{
+    clear: both;
+}
+
+.cont_dato .txt_right .bt-red{
+    width: auto;
+}
+
+.cont_mis_datos{
+    color: #6d6d6d;
+}
+
+.cont_mis_datos h1{
+    padding-bottom: 0;
+}
+
+.cont_mis_datos h2{
+    margin-bottom: 20px;
+}
+
+.cont_mis_datos .dato_main{
+    border-bottom: 1px solid #f2f2f2;
+    margin: 40px 0 20px 0;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.cont_mis_datos .dato_main img,
+.cont_mis_datos .dato_main ul{
+    float: left;
+}
+
+.cont_mis_datos .dato_main img{
+    margin-right: 20px;
+}
+
+.cont_mis_datos .cont_dato ul{
+    margin-bottom: 20px;
+}
+
+.cont_mis_datos .cont_dato li{
+    float: left;
+    margin-right: 10px;
+}
+
+.cont_mis_datos .cont_dato .leyend ul li{
+    float: none;
+    font-size: 0.87em;
+    padding: 4px 0 4px 30px;
+}
+
+.cont_mis_datos .cont_dato .txt_right li{
+    display: inline-block;
+    float: none;
+    margin: 0 0 0 10px;
+}
+
+.cont_mis_datos .cont_dato .icon-dato{
+    margin-right: 30px;
+}
+
+.cont_mis_datos .mas_datos{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.cont_mis_datos .datos_arriba ul{
+    overflow: hidden;
+}
+
+.cont_mis_datos .form{
+    max-width: 100%;
+}
+
+.cont_mis_datos .cont_dato .label_dato{
+    width: 28%;
+}
+
+.cont_mis_datos .cont_input{
+    width: 59%;
+}
+
+.cont_mis_datos .cont_input fieldset,
+.cont_mis_datos .cont_input fieldset input{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.cont_mis_datos .cont_input fieldset{
+    margin: 0 0 20px 0;
+    padding: 0 3px;
+}
+
+.cont_mis_datos .cont_input .cont_calendar{
+    width: 100%;
+}
+
+.container_datos_form, .container_datos{
+    overflow: hidden;
+}

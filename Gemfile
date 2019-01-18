@@ -50,6 +50,9 @@ gem 'meta_request'
 # Gem for Better Error Page
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
+# Encryptor for Users CC https://github.com/attr-encrypted/attr_encrypted
+gem "attr_encrypted", "~> 3.1.0"
+
 
 
 # Use CoffeeScript for .coffee assets and views

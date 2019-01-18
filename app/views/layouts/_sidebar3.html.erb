@@ -3,16 +3,19 @@
     <nav id="sidebar">
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="" aria-expanded="false" class="dropdown-toggle">Mis Datos</a>
+                <a href="" aria-expanded="false" class="dropdown-toggle">Dashboard</a>
             </li>
             <li>
               <%= link_to("Mis Datos", user_path(current_user), class:"dropdown-toggle") %>
             </li>
             <li>
-              <%= link_to("Mis Lavados", user_washes_path(current_user), class:"dropdown-toggle") %>
+              <%= link_to("Mis Vehículos", user_vehicles_path(current_user), class:"dropdown-toggle") %>
             </li>
             <li>
-              <%= link_to("Mis Vehículos", user_vehicles_path(current_user), class:"dropdown-toggle") %>
+              <%= link_to("Lavados Realizados", user_washes_path(current_user), class:"dropdown-toggle") %>
+            </li>
+            <li>
+              <%= link_to("Mis Pagos y Boletas", user_vehicles_path(current_user), class:"dropdown-toggle") %>
             </li>
             <li>
               <%= link_to("Tarjetas de Crédito", user_vehicles_path(current_user), class:"dropdown-toggle") %>
