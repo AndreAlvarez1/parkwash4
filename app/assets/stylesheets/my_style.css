@@ -22,6 +22,10 @@
   flex-wrap: inherit;
 }
 
+#card-cards {
+  flex-wrap: inherit;
+}
+
 #main-content {
   margin-top: 1%;
   float:left;

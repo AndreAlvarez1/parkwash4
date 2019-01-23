@@ -3,7 +3,7 @@
     <nav id="sidebar">
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="" aria-expanded="false" class="dropdown-toggle">Dashboard</a>
+              <%= link_to("Dashboard", user_path(current_user), class:"dropdown-toggle") %>
             </li>
             <li>
               <%= link_to("Mis Datos", user_path(current_user), class:"dropdown-toggle") %>
@@ -12,15 +12,16 @@
               <%= link_to("Mis Vehículos", user_vehicles_path(current_user), class:"dropdown-toggle") %>
             </li>
             <li>
+              <%= link_to("Mi Plan", user_vehicles_path(current_user), class:"dropdown-toggle") %>
+            </li>
+            <li>
               <%= link_to("Lavados Realizados", user_washes_path(current_user), class:"dropdown-toggle") %>
             </li>
             <li>
               <%= link_to("Mis Pagos y Boletas", user_vehicles_path(current_user), class:"dropdown-toggle") %>
             </li>
             <li>
-              <%= link_to("Tarjetas de Crédito", user_vehicles_path(current_user), class:"dropdown-toggle") %>
+              <%= link_to("Tarjetas de Crédito", user_cards_path(current_user), class:"dropdown-toggle") %>
             </li>
         </ul>
     </nav>
-
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->

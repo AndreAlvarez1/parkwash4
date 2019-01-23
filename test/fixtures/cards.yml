@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  number: 1
+  active: false
+  erased: false
+
+two:
+  user: two
+  number: 1
+  active: false
+  erased: false

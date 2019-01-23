@@ -1,0 +1,45 @@
+<%= render "layouts/navbar" %>
+<%= render "layouts/sidebar3" %>
+
+<div id="main-content">
+
+  <div class="container">
+
+  <div id="content-title" class="container row">
+        <h1>Tarjetas de Crédito de <%= current_user.first_name + " " + current_user.last_name %></h1>
+  </div>
+
+    <div id="card-cards" class="container row">
+      <% @user.cards.each do |card| %>
+        <div class="card" style="width: 36rem;">
+
+          <% img_path = "app/assets/images/cards/generic_card.png" %>
+          <% if File.exist?(img_path) %>
+            <%= image_tag "cards/generic_card.png", class: "card-img-top", alt: "Card Image Cap" %>
+          <% end  %>
+          <div class="card-body">
+            <h4 class="card-title"> <%= "#{card.first_four_numbers} XXXX XXXX #{card.last_four_numbers}" %> </h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <% if card.active == true %>
+              <li class="list-group-item">Tarjeta Activa</li>
+              <li> <%= link_to 'Desactivar Tarjeta', activate_user_card_path(@user, card), method: :patch, class: "card-link btn btn-danger" %></li>
+            <% else %>
+              <li class="list-group-item">Tarjeta No Activa</li>
+              <li> <%= link_to 'Activar Tarjeta', activate_user_card_path(@user, card), method: :patch, class: "card-link btn btn-primary" %></li>
+            <% end %>
+            <li> <%= link_to 'Eliminar Tarjeta', user_card_path(@user, card), method: :delete, class: "card-link btn btn-danger" %></li>
+          </ul>
+
+        </div>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div class="container row">
+      <%= link_to 'Ingresar Nueva Tarjeta', new_user_card_path(@user), class: "btn btn-success" %>
+    </div>
+
+  </div>
+</div>

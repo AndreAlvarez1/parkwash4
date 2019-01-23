@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :vehicles, dependent: :delete_all
   has_many :washes, through: :vehicles
   has_many :receipts
+  has_many :cards
 
 
   #VALIDATIONS IN THIS MODEL
