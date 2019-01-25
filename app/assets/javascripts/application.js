@@ -63,6 +63,9 @@
 //= require public
 //
 //= stub active_admin
+//= require datatables.net/js/jquery.dataTables
+//= require datatables.net-bs4/js/dataTables.bootstrap4
+
 //
 //= require rails-ujs
 //= require activestorage

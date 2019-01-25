@@ -6,6 +6,7 @@ class PaymentsController < ApplicationController
   # GET /payments.json
   def index
     @payments = Payment.all
+    @user = current_user
   end
 
   # GET /payments/1

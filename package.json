@@ -1,5 +1,7 @@
 {
   "name": "parkwash_rails_v2",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "datatables.net-bs4": "^1.10.19"
+  }
 }

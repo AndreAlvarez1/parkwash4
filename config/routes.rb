@@ -44,14 +44,12 @@ Rails.application.routes.draw do
     resources :washes
     resources :receipts
     resources :cards
-
+    resources :payments
     resources :cards, only:[:index, :destroy] do
-    member do
-      patch 'activate'
+      member do
+        patch 'activate'
+      end
     end
   end
-
-  end
-
 
 end

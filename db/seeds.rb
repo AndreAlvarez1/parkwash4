@@ -168,17 +168,15 @@ csv_file = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv_file.each do |row|
   array = row[0].split(";")
   x = Payment.new
-  x.bank = array[0]
-  x.statement_date = array[1].to_date
-  x.document_number = array[2]
-  x.description = array[3]
-  x.received_amount = array[4].to_i
-  x.commission = array[5].to_i
-  x.commissioner = array[6]
+  x.charged_date = array[1].to_date
+  x.paid_amount = array[4].to_i
+  x.method = array[6]
+  x.user_id = rand(1..30)
+  x.receipt_id = rand(1..50)
   x.save
   puts "Errors: #{x.errors.messages}"
   errors << x.errors.messages
-  puts "Payment w/ ID:#{x.id} and Amount: #{x.received_amount} has been saved"
+  puts "Payment w/ ID:#{x.id} and Amount: #{x.paid_amount} has been saved"
 end
 puts "There are now #{Payment.count} rows in the Payments table"
 

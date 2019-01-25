@@ -24,6 +24,8 @@
  *= require responsive
  *= require flat_user_profile_ui
  *
+ *= require datatables.net-bs4/css/dataTables.bootstrap4
+ *
  *= require_tree .
  *= require_self
  */

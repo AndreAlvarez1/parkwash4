@@ -31,7 +31,7 @@
   float:left;
 }
 
-#washes-table {
+#washes-table-div, #payments-table-div {
   width: 200%;
 }
 

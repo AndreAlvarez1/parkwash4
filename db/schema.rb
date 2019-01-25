@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_232047) do
+ActiveRecord::Schema.define(version: 2019_01_24_231243) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -59,15 +59,15 @@ ActiveRecord::Schema.define(version: 2019_01_22_232047) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.string "bank"
-    t.date "statement_date"
-    t.string "document_number"
-    t.string "description"
-    t.integer "received_amount"
-    t.integer "commission"
-    t.string "commissioner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "charged_date"
+    t.string "method"
+    t.integer "paid_amount"
+    t.integer "user_id"
+    t.integer "receipt_id"
+    t.index ["receipt_id"], name: "index_payments_on_receipt_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "places", force: :cascade do |t|

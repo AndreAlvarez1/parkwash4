@@ -14,7 +14,7 @@ class CardsController < InheritedResources::Base
     @card = Card.create(card_params)
     @card.user_id = current_user.id
     @card.active = false
-    @card.erase = false
+    @card.erased = false
     # render json: @vehicle.as_json
     respond_to do |format|
       if @card.save

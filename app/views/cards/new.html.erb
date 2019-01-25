@@ -1,8 +1,23 @@
 <%= render "layouts/navbar" %>
 <%= render "layouts/sidebar3" %>
 
-<h1>New Card</h1>
+<div id="main-content">
 
-<%= render 'form', card: @card %>
+  <div class="container">
 
-<%= link_to 'Back', user_cards_path(current_user) %>
+    <div id="content-title" class="container row">
+      <h1>Creación de Nueva Tarjeta</h1>
+    </div>
+
+    <%= render 'form', card: @card %>
+
+    <h3>Al ingresar una nueva tarjeta, acepto las siguientes condiciones:</h3>
+
+    <p>PRIMERO: En consideración a que he acordado con Parkwash SpA el pago de un bien o servicio o un aporte voluntario al mismo, por el presente instrumento instruyo expresamente a Parkwash SpA para que por intermedio de Transbank S.A. se cargue en mi Tarjeta de Crédito arriba individualizada, o cualquiera otra que la sustituya o reemplace, para que sean pagadas a Parkwash SpA, asumiendo además el compromiso de mantener mi tarjeta vigente y con el crédito suficiente para cubrir los cargos. En caso de sustitución, revocación, vencimiento o reemplazo de la tarjeta de crédito, me obligo a informar por escrito a Parkwash SpA de dicha situación, no obstante lo cual autorizo a Transbank S.A. o al Emisor de la tarjeta a informar a Parkwash SpA la nueva fecha de vencimiento, el nuevo número y/o tarjeta asignada y que los cargos respectivos se efectúen en ella. A su vez, en caso de no detectarse una tarjeta que reemplace o sustituya a la arriba indicada, autorizo a Transbank S.A. a cargar las cantidades señaladas en cualquier otra tarjeta de crédito emitida a mi nombre y operada por tal empresa y a informar dicha tarjeta a Parkwash SpA.</p>
+    <p>SEGUNDO: Parkwash SpA determinará mes a mes el valor a cobrar a cada cliente registrado, según los lavados efectuados el mes anterior y los precios vigentes. Se enviará un detalle de los lavados y el monto a cobrar 1 semana antes del cobro a cada cliente, para que este lo revise y objete en caso que corresponda.</p>
+    <p>TERCERO: Acepto que Parkwash SpA enviará a Transbank S.A. periódicamente la información de cobro correspondiente, liberando a Transbank S.A. si ello no ocurriera. La relación contractual entre Parkwash SpA y el suscrito, es exclusiva entre ambas partes, por lo que libero a Transbank S.A. de cualquier obligación al respecto. En el evento que Transbank S.A., por cualquier circunstancia, no efectuara algún cargo en mi Tarjeta de Crédito Parkwash SpA deberá procurarse el pago directamente. Además, si de ello se me produjera o llegara a producir algún daño o perjuicio, especialmente relacionado con falta de coberturas o caducidades de contratos, libero expresamente de toda responsabilidad a Transbank S.A. y renuncio a cualquier acción en contra de esta última derivada de esta instrucción.</p>
+    <p>CUARTO: El presente instrumento continuará vigente hasta que yo la revoque. No obstante, la presente instrucción expirará automáticamente en caso de término del contrato entre Parkwash SpA y Transbank S.A.</p>
+    <p>QUINTO: Por el presente acto, declaro que no obstante la presente instrucción, mi obligación de pago a Parkwash SpA es y será siempre responsabilidad del suscrito.</p>
+  </div>
+
+</div>
