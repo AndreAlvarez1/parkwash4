@@ -22,8 +22,8 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/new
   def new
-    @vehicle = Vehicle.new
     @places = Place.all
+    @vehicle = Vehicle.new
   end
 
   # GET /vehicles/1/edit
@@ -34,6 +34,7 @@ class VehiclesController < ApplicationController
   # POST /vehicles.json
   def create
     # debugger
+    @places = Place.all
     @vehicle = Vehicle.create(vehicle_params)
     @vehicle.user_id = current_user.id
     @vehicle.vehicle_size = VehicleSize.first

@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :washes, through: :vehicles
   has_many :receipts
   has_many :cards
+  has_many :plans
+
 
 
   #VALIDATIONS IN THIS MODEL

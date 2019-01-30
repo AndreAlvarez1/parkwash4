@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     resources :receipts
     resources :cards
     resources :payments
+    resources :plans
     resources :cards, only:[:index, :destroy] do
       member do
         patch 'activate'

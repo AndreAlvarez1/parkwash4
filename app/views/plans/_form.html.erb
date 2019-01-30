@@ -1,0 +1,35 @@
+<%= form_with(model: plan, url: [current_user, plan], local: true) do |form| %>
+  <% if plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label "Selecciona tu(s) Vehículo(s) para este plan" %><br />
+    <%= form.collection_select :vehicle_id, @user_vehicles, :id, :patent, :prompt => "Selecciona un vehículo",
+    class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Selecciona el tipo de Lavado para este plan" %><br />
+    <%= form.collection_select :wash_type_id, @all_wash_types, :id, :name, :prompt => "Selecciona un tipo de lavado",
+    class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Frecuencia de Lavado" %>
+    <%= form.text_field :frequency %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
