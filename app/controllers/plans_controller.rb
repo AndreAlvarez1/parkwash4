@@ -19,6 +19,24 @@ class PlansController < InheritedResources::Base
     @user_vehicles = @user.vehicles
     @all_wash_types = WashType.all
     @plan.user_id = current_user.id
+    @plan.wash_type_id = params[:plan][:wash_type_id]
+    @vehicles_ids_chosen = params[:plan][:vehicles_chosen]
+    @vehicles_array = []
+    @vehicles_ids_chosen.each do |veh_id|
+      @vehicles_array << Vehicle.find(veh_id.to_i)
+    end
+
+    @plan.save
+
+    @vehicles_array.each do |vehicle|
+      vehicle.plan_id = @plan.id
+      vehicle.save
+    end
+
+    # debugger
+
+
+
     # render json: @plan.as_json
     respond_to do |format|
       if @plan.save
@@ -35,6 +53,6 @@ class PlansController < InheritedResources::Base
   private
 
     def plan_params
-      params.require(:plan).permit(:code, :name, :description, :type_wash, :frequency, :price)
+      params.require(:plan).permit(:wash_type, :frequency)
     end
 end

@@ -39,6 +39,10 @@
   margin-right: 30px;
 }
 
+#boton-contrata-plan{
+  color: white;
+}
+
 .cont_dato .txt_right{
     clear: both;
 }

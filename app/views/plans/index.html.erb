@@ -13,7 +13,7 @@
 
       <h4>No tienes planes contratados actualmente</h4>
       <br>
-      <%= link_to 'Contrata un Plan', new_user_plan_path(@user), class: "btn btn-primary" %>
+      <%= link_to 'Contrata un Plan', new_user_plan_path(@user), class: "btn btn-primary", id:"boton-contrata-plan" %>
 
 
 
@@ -40,8 +40,19 @@
             <tr>
               <td><%= plan.id %></td>
               <td><%= plan.user.full_name %></td>
-              <td><%= plan.vehicles %></td>
-              <td><%= plan.wash_type %></td>
+
+              <% if plan.vehicles %>
+                <% plan.vehicles.each do |vehicle| %>
+                  <td>- Patente: <%= vehicle.patent %></td>
+                <% end %>
+              <% end %>
+
+              <% if plan.wash_type %>
+                <td> <%= plan.wash_type.id %> </td>
+              <% else %>
+                <td>-</td>
+              <% end %>
+
               <td><%= plan.frequency %></td>
               <td><%= link_to 'Show', user_plans_path(@user) %></td>
               <td><%= link_to 'Destroy', user_plan_path(@user, plan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -51,6 +62,9 @@
       </table>
 
       <br>
+
+      <%= link_to 'Contrata un Plan', new_user_plan_path(@user), class: "btn btn-primary", id:"boton-contrata-plan" %>
+
 
     <% end %>
 

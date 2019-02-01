@@ -11,12 +11,16 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label "Selecciona tu(s) Vehículo(s) para este plan" %><br />
-    <%= form.collection_select :vehicle_id, @user_vehicles, :id, :patent, :prompt => "Selecciona un vehículo",
-    class: 'form-control' %>
-  </div>
+  <!-- Debe ser un checkbox con máximo 2 autos. -->
 
+    <%  @user_vehicles.each do |veh| %>
+      <div class="form-group">
+        <%= form.label veh.patent %><br />
+        <%= form.check_box :vehicles_chosen, { :multiple => true }, veh.id, false %>
+      </div>
+    <% end  %>
+
+  <!-- Debe ser un select  -->
   <div class="form-group">
     <%= form.label "Selecciona el tipo de Lavado para este plan" %><br />
     <%= form.collection_select :wash_type_id, @all_wash_types, :id, :name, :prompt => "Selecciona un tipo de lavado",
