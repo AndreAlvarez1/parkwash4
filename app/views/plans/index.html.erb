@@ -6,7 +6,7 @@
   <div class="container">
 
     <div id="content-title" class="container row">
-          <h1>Plan Contratados</h1>
+          <h1>Suscripciones Contratadas</h1>
     </div>
 
     <% if @user.plans.first == nil %>
@@ -19,15 +19,9 @@
 
     <% else %>
 
-      <p id="notice"><%= notice %></p>
-
-      <h1>Plans</h1>
-
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>User Name</th>
             <th>Patente</th>
             <th>Tipo de Lavado</th>
             <th>Frecuencia</th>
@@ -36,27 +30,26 @@
         </thead>
 
         <tbody>
+
           <% @plans.each do |plan| %>
-            <tr>
-              <td><%= plan.id %></td>
-              <td><%= plan.user.full_name %></td>
+            <% if plan.vehicles.length > 0 %>
+              <tr>
+                <td>
+                  <% plan.vehicles.each do |vehicle| %>
+                    Patente: <%= vehicle.patent %><br>
+                  <% end %>
+                </td>
 
-              <% if plan.vehicles %>
-                <% plan.vehicles.each do |vehicle| %>
-                  <td>- Patente: <%= vehicle.patent %></td>
-                <% end %>
-              <% end %>
+                <td>
+                  <% if plan.wash_type %>
+                    <%= plan.wash_type.name %> (<%= plan.wash_type.description %>)
+                  <% end %>
+                </td>
 
-              <% if plan.wash_type %>
-                <td> <%= plan.wash_type.id %> </td>
-              <% else %>
-                <td>-</td>
-              <% end %>
-
-              <td><%= plan.frequency %></td>
-              <td><%= link_to 'Show', user_plans_path(@user) %></td>
-              <td><%= link_to 'Destroy', user_plan_path(@user, plan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
+                <td><%= plan.frequency %></td>
+                <td><%= link_to 'Eliminar', user_plan_path(@user, plan), method: :delete, data: { confirm: '¿Estás seguro que quieres eliminar esta suscripción?' } %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
