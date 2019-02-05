@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_02_01_003255) do
     t.date "charged_date"
     t.string "method"
     t.integer "paid_amount"
+    t.string "description"
     t.integer "user_id"
     t.integer "receipt_id"
     t.index ["receipt_id"], name: "index_payments_on_receipt_id"
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_02_01_003255) do
   end
 
   create_table "places", force: :cascade do |t|
+    t.string "name"
     t.string "address"
     t.string "commune"
     t.string "city"
@@ -79,7 +81,6 @@ ActiveRecord::Schema.define(version: 2019_02_01_003255) do
     t.string "contact_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
   end
 
   create_table "plans", force: :cascade do |t|
