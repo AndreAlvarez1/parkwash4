@@ -50,6 +50,15 @@ class PlansController < InheritedResources::Base
     end
   end
 
+  def destroy
+    @plan = Plan.find(params[:id])
+    @plan.destroy
+    respond_to do |format|
+      format.html { redirect_to user_plans_path, notice: 'La suscripción fue borrada con éxito.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
     def plan_params

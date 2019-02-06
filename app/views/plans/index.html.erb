@@ -25,6 +25,7 @@
             <th>Patente</th>
             <th>Tipo de Lavado</th>
             <th>Frecuencia</th>
+            <th>Fecha de Creación</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -42,11 +43,13 @@
 
                 <td>
                   <% if plan.wash_type %>
-                    <%= plan.wash_type.name %> (<%= plan.wash_type.description %>)
+                    <%= plan.wash_type.name %> <br>
+                    (<%= plan.wash_type.description %>)
                   <% end %>
                 </td>
 
                 <td><%= plan.frequency %></td>
+                <td><%= time_ago_in_words(plan.created_at) %></td>
                 <td><%= link_to 'Eliminar', user_plan_path(@user, plan), method: :delete, data: { confirm: '¿Estás seguro que quieres eliminar esta suscripción?' } %></td>
               </tr>
             <% end %>

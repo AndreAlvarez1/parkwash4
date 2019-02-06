@@ -27,9 +27,11 @@
     class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label "Frecuencia de Lavado" %>
-    <%= form.text_field :frequency %>
+  <!-- Debe ser un select  -->
+  <div class="form-group">
+    <%= form.label "Selecciona la frecuencia de Lavado para este plan" %><br />
+    <%= form.select :frequency, [['Alta (1 lavado cada 1 semana)'], ['Media  (1 lavado cada 2 semanas)'], ['Bajo  (1 lavado cada 4 semanas)']],
+    class: 'form-control' %>
   </div>
 
 

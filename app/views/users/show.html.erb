@@ -13,7 +13,7 @@
 					<%= image_tag "icons/b-profile.png", alt: "Big Profile",  id: "user-pic" %>
 				<ul>
 					<div class="row">
-						<li><%= image_tag "icons/ico-mail.png", alt: "Profile icon" %> Nombre de Usuario (E-mail): <span>nicoalamo@gmail.com</span></li>
+						<li><%= image_tag "icons/ico-mail.png", alt: "Profile icon" %> Nombre de Usuario (E-mail): <span><%= @user.email %></span></li>
 					</div>
 					<div class="row">
 						<li><%= image_tag "icons/ico-candado.png", alt: "Profile icon" %> Contraseña: ****** </li>
@@ -32,31 +32,19 @@
 				<ul>
 					<li class="icon-dato"><%= image_tag "icons/ico-profile.png", alt: "Profile icon" %></li>
 					<li>Nombre completo:</li>
-					<li>Nicolas Alamo Salazar</li>
+					<li><%= @user.full_name %></li>
 				</ul>
 
 				<ul>
 					<li class="icon-dato"><%= image_tag "icons/ico-cel.png", alt: "Cel Icon" %></li>
 					<li>Rut:</li>
-					<li>21.512.412-4</li>
-				</ul>
-
-				<ul>
-					<li class="icon-dato"><%= image_tag "icons/ico-map.png", alt: "Map icon" %></li>
-					<li>Dirección de contacto:</li>
-					<li>Los Trigales 7887, Apartment 305, LAS CONDES,&nbspXIII Región Metropolitana</li>
+					<li><%= @user.rut %></li>
 				</ul>
 
 				<ul>
 					<li class="icon-dato"><%= image_tag "icons/ico-cel.png", alt: "Cel Icon" %></li>
 					<li>Teléfono de contacto:</li>
-					<li>56 9 92513342</li>
-				</ul>
-
-				<ul>
-					<li class="icon-dato"><%= image_tag "icons/icon-calendar.png", alt: "Calendar Icon" %></li>
-					<li>Fecha de nacimiento:</li>
-					<li>27/12/1986</li>
+				<li><%= @user.cellphone %></li>
 				</ul>
 
 				<ul>
