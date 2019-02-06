@@ -2,6 +2,7 @@ class VehiclesController < ApplicationController
   # load_and_authorize_resource
   before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
 
+
   # GET /vehicles
   # GET /vehicles.json
   def index
@@ -35,10 +36,17 @@ class VehiclesController < ApplicationController
   def create
     # debugger
     @places = Place.all
-    @vehicle = Vehicle.create(vehicle_params)
+    if current_user.vehicles.count < 3
+      @vehicle = Vehicle.create(vehicle_params)
+    else
+      respond_to do |format|
+        format.html { redirect_to user_vehicles_path, alert: 'Vehículo No creado. Sólo puedes registrar 3 como máximo' }
+      end
+      return
+    end
     @vehicle.user_id = current_user.id
     @vehicle.vehicle_size = VehicleSize.first
-    # render json: @vehicle.as_json
+
     respond_to do |format|
       if @vehicle.save
         format.html { redirect_to user_vehicles_path, notice: 'Vehicle was successfully created.' }
