@@ -13,7 +13,7 @@ class Vehicle < ApplicationRecord
   validates :user_id, presence: true, numericality: true
   validates :vehicle_size_id, presence: true, numericality: true
 
-  # VALIDATIONS (New) - Traté de hacerlo aquí pero no supe como (06-02-2019),
+  # VALIDATIONS (New) - Traté de hacerlo aquí pero no supe bien como (06-02-2019).
   # Retormalo más adelante
   # validate :check_quantity_restriction?, :on => :create
   # before_action :check_quantity_restriction?, only: [:create]

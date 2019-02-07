@@ -11,7 +11,16 @@ class CardsController < InheritedResources::Base
 
   def create
     # debugger
-    @card = Card.create(card_params)
+
+    if current_user.cards.count < 2
+      @card = Card.create(card_params)
+    else
+      respond_to do |format|
+        format.html { redirect_to user_cards_path, alert: 'La tarjeta no fue registrada. Sólo puedes registrar 2 como máximo.'}
+      end
+      return
+    end
+
     @card.user_id = current_user.id
     @card.active = false
     @card.erased = false

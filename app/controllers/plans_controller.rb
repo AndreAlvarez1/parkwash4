@@ -1,5 +1,7 @@
 class PlansController < InheritedResources::Base
 
+  before_action :delete_empty_plans, only: [:create, :update]
+
 
   def index
     @plans = Plan.all
@@ -14,7 +16,16 @@ class PlansController < InheritedResources::Base
   end
 
   def create
-    @plan = Plan.create(plan_params)
+
+    if current_user.plans.count < 3
+      @plan = Plan.create(plan_params)
+    else
+      respond_to do |format|
+        format.html { redirect_to user_plans_path, alert: 'La suscripción no fue creada. Sólo puedes crear 3 como máximo' }
+      end
+      return
+    end
+
     @user = current_user
     @user_vehicles = @user.vehicles
     @all_wash_types = WashType.all
@@ -25,6 +36,8 @@ class PlansController < InheritedResources::Base
     @vehicles_ids_chosen.each do |veh_id|
       @vehicles_array << Vehicle.find(veh_id.to_i)
     end
+
+
 
     @plan.save
 
@@ -63,5 +76,14 @@ class PlansController < InheritedResources::Base
 
     def plan_params
       params.require(:plan).permit(:wash_type, :frequency)
+    end
+
+    def delete_empty_plans
+      @all_plans = Plan.all
+      @all_plans.each do |plan|
+        if plan.vehicles.count == 0
+          plan.destroy
+        end
+      end
     end
 end

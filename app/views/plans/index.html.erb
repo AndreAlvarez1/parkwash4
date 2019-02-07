@@ -33,7 +33,7 @@
         <tbody>
 
           <% @plans.each do |plan| %>
-            <% if plan.vehicles.length > 0 %>
+            <% if plan.vehicles.count > 0 %>
               <tr>
                 <td>
                   <% plan.vehicles.each do |vehicle| %>

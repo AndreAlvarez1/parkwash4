@@ -78,7 +78,7 @@ class VehiclesController < ApplicationController
   def destroy
     @vehicle.destroy
     respond_to do |format|
-      format.html { redirect_to user_vehicles_path, notice: 'Vehicle was successfully destroyed.' }
+      format.html { redirect_to user_vehicles_path, notice: 'El vehículo fue eliminado.' }
       format.json { head :no_content }
     end
   end
