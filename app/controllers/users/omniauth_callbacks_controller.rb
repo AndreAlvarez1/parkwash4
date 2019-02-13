@@ -19,7 +19,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user.save
 
       if @user.persisted?
-        sign_in_and_redirect @user
+        sign_in @user
+        redirect_to user_path(@user)
         set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
       else
         redirect_to root_path, notice: 'Error al iniciar sesión con Facebook.'
