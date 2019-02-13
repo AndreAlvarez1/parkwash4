@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   get 'pages/index_washers'
+  get 'pages/indexnuevo'
 
   get 'vehicles/index_all', to: 'vehicles#index_all'
   get 'washes/index_all', to: 'washes#index_all'

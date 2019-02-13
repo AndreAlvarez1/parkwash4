@@ -1,0 +1,145 @@
+<div class="home">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light ">
+  <img src="<%= asset_path 'media/image/logo_sticky.png' %>" alt="" class="template-logo template-logo-sticky"/>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+      </li>
+      <li class="nav-item">
+      <!--  <a class="nav-link" href="#">Features</a>-->
+      </li>
+      <li class="nav-item">
+        <!--<a class="nav-link" href="#">Pricing</a>-->
+      </li>
+    </ul>
+
+    <span class="navbar-text">
+      <ul class="navbar-nav">
+      <% if user_signed_in?  %>
+        <li class="nav-item"><%= link_to "Ver Mi Perfil", user_path(@user) %></li>
+        <li class="nav-item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li class="nav-item"><%= link_to 'Inicio Sesión', new_user_session_path %></li>
+        <li class="nav-item"><%= link_to 'Registrarse', new_user_registration_path  %></li>
+      <% end  %>
+    </ul>
+    </span>
+  </div>
+</nav>
+
+<header>
+  <div class="parallax1 para">
+    <div class="row justify-content-center">
+      <div class="titular col-sm-10 col-md-6">
+        <h1>NO TE PREOCUPES NUNCA</h1>
+        <h1>MÁS DE LAVAR TU AUTO</h1>
+        <h2>Suscríbete a uno de nuestros planes,
+y nosotros nos preocuparemos por ti</h2>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<div class="franja row">
+  <div class="col-12">
+    <h1>¿Cómo funciona ParkWash?</h1>
+  </div>
+</div>
+
+
+<div class="uno row">
+  <div class="col-4 offset-7">
+    <h1>Lavamos tu auto en tu </h1>
+    <h1>propio estacionamiento</h1>
+    <p class="textoCuerpo">ParkWash ofrece servicios de lavado en seco premium en tu propio estacionamiento.
+
+        Estos servicios se ofrecen sólo en seleccionados estacionamientos de condominios y oficinas.
+
+        ¡De a poco vamos incluyendo más!.</p>
+  </div>
+</div>
+
+<div class="dos row">
+  <div class="col-5 offset-1 dosIzq">
+    <h1>Modelo de Suscripciones</h1>
+    <p class="textoCuerpo">ParkWash funciona en base a un modelo de suscripciones.
+
+Simplemente debes escoger el tipo de lavado que te gustaría para tu vehículo y la frecuencia con que quieres que te lo lavemos, y listo.
+
+¡Nosotros nos encargaremos de que encuentres tu auto lavado cada vez que te subas a este, según la frecuencia que escogiste!</p>
+  </div>
+  <div class="col-6 dosDer">
+  </div>
+</div>
+
+
+<div class="tres row">
+  <div class="col-4 offset-2">
+    <img src="http://www.andrealvarez.com/parkwash/images/lapto.png">
+  </div>
+
+  <div class="col-4">
+    <h1>Pagos Automáticos Mensuales</h1>
+    <p>Te cobraremos una vez al mes, según la cantidad de lavados que efectivamente se te realizaron en el mes anterior.
+        El pago es automático a tu medio de pago registrado.
+        ¡Pagar tus lavados de auto nunca fue tan fácil y cómodo!
+    </p>
+  </div>
+</div>
+
+
+
+
+<div class="parallax2 para">
+  <div class="row justify-content-center">
+    <div class="titular col-sm-10 col-md-6">
+      <h1>Empresa limpia etc</h1>
+      <h1>Lavamos en seco, sin contaminar</h1>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="row home">
+    <div class="col-12">
+        <h1>hola mundo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="col-12">
+        <h1>hola mundo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="col-12">
+        <h1>hola mundo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="col-12">
+        <h1>hola mundo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="col-12">
+        <h1>hola mundo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="col-12">
+        <h1>hola mundo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="col-12">
+        <h1>hola mundo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+</div>
+
+
+</div><!--fin clase home-->
