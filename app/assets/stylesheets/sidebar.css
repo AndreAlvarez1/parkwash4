@@ -55,14 +55,14 @@ a, a:hover, a:focus {
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
     float: left;
-    background: #7386D5;
+    background: #00689C;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #00689C;
 }
 
 #sidebar ul.components {

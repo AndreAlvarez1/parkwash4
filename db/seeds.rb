@@ -166,11 +166,12 @@ puts "There are now #{Receipt.count} rows in the Receipts table"
 csv_text = File.read(Rails.root.join('db', 'seeds_databases', 'payments_db.csv'))
 csv_file = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv_file.each do |row|
+payment_method = ["Transferencia Bancaria","Tarjeta de Crédito", "Efectivo"]
   array = row[0].split(";")
   x = Payment.new
   x.charged_date = array[1].to_date
   x.paid_amount = array[4].to_i
-  x.method = array[6]
+  x.method = payment_method[rand(1..3)]
   x.user_id = rand(1..30)
   x.receipt_id = rand(1..50)
   x.save

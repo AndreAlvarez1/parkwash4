@@ -8,4 +8,9 @@ class Washer < ApplicationRecord
   validates :role, presence: true
 
   enum role: [:superadmin, :admin, :supervisor, :basic]
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+  
 end

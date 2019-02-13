@@ -6,7 +6,7 @@
   <div class="container">
 
     <div id="content-title" class="container row">
-          <h1>Suscripciones Contratadas</h1>
+          <h1>Mis Suscripciones</h1>
     </div>
 
     <% if @user.plans.first == nil %>
@@ -19,43 +19,46 @@
 
     <% else %>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Patente</th>
-            <th>Tipo de Lavado</th>
-            <th>Frecuencia</th>
-            <th>Fecha de Creación</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
+      <div id="plan-cards" class="container row">
+        <% @user.plans.each do |plan| %>
+          <% if plan.vehicles.count > 0 %>
+            <div class="card" style="width: 36rem;">
 
-        <tbody>
-
-          <% @plans.each do |plan| %>
-            <% if plan.vehicles.count > 0 %>
-              <tr>
-                <td>
+              <!-- <p>img_path = "app/assets/images/vehicles/#{vehicle.patent}.jpg"</p> -->
+              <% img_path = "app/assets/images/plans/planavatar2.jpg" %>
+              <% if File.exist?(img_path) %>
+                <%= image_tag "plans/planavatar2.jpg", class: "card-img-top", alt: "Plan Image Cap" %>
+              <% end  %>
+              <div class="card-body">
+                <h4 class="card-title"> <%= "Suscripción ##{plan.id}" %> </h4>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
                   <% plan.vehicles.each do |vehicle| %>
                     Patente: <%= vehicle.patent %><br>
-                  <% end %>
-                </td>
-
-                <td>
+                  <% end %>                </li>
+                <li class="list-group-item">
                   <% if plan.wash_type %>
                     <%= plan.wash_type.name %> <br>
                     (<%= plan.wash_type.description %>)
                   <% end %>
-                </td>
+                </li>
+                <li class="list-group-item">
+                  <%= plan.frequency %>
+                </li>
+                <li class="list-group-item">
+                  Creado: <%= time_ago_in_words(plan.created_at) %>
+                </li>
+                <li>
+                  <%= link_to 'Eliminar', user_plan_path(@user, plan), class: "btn btn-danger", method: :delete, data: { confirm: '¿Estás seguro que quieres eliminar esta suscripción?' } %>
+                </li>
+              </ul>
 
-                <td><%= plan.frequency %></td>
-                <td><%= time_ago_in_words(plan.created_at) %></td>
-                <td><%= link_to 'Eliminar', user_plan_path(@user, plan), method: :delete, data: { confirm: '¿Estás seguro que quieres eliminar esta suscripción?' } %></td>
-              </tr>
-            <% end %>
+            </div>
           <% end %>
-        </tbody>
-      </table>
+
+        <% end %>
+      </div>
 
       <br>
 

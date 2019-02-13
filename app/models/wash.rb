@@ -9,4 +9,8 @@ class Wash < ApplicationRecord
   validates :washer_id, presence: true, numericality: true
   validates :vehicle_id, presence: true, numericality: true
 
+  def wash_price
+    rand(55..100)*100
+  end
+
 end

@@ -4626,7 +4626,7 @@ tbody tr td.col-actions {
 #sidebar {
   width: 230px;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 0px;
   -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.04);
   -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.04);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.04);
