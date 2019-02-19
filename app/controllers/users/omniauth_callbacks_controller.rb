@@ -12,7 +12,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def facebook
       # Debemos crear el método .from_omniauth en nuestro modelo User (app/models/user.rb)
       @user = User.from_omniauth(request.env["omniauth.auth"])
-      @user.place_id = 1
       @full_name = @user.first_name.split(" ")
       @user.first_name = @full_name[0]
       @user.last_name = @full_name[1]
@@ -20,7 +19,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user.save
 
       if @user.persisted?
-        sign_in_and_redirect @user
+        sign_in @user
+        redirect_to user_path(@user)
         set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
       else
         redirect_to root_path, notice: 'Error al iniciar sesión con Facebook.'

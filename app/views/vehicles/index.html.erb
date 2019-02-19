@@ -6,16 +6,17 @@
   <div class="container">
 
   <div id="content-title" class="container row">
-        <h1>Vehiculos</h1>
+        <h1>Mis Vehiculos</h1>
   </div>
 
     <div id="vehicle-cards" class="container row">
       <% @user.vehicles.each do |vehicle| %>
         <div class="card" style="width: 36rem;">
 
-          <% img_path = "app/assets/images/vehicles/#{vehicle.patent}.jpg" %>
+          <!-- <p>img_path = "app/assets/images/vehicles/#{vehicle.patent}.jpg"</p> -->
+          <% img_path = "app/assets/images/vehicles/caravatar.png" %>
           <% if File.exist?(img_path) %>
-            <%= image_tag "vehicles/#{vehicle.patent}.jpg", class: "card-img-top", alt: "Card Image Cap" %>
+            <%= image_tag "vehicles/caravatar.png", class: "card-img-top", alt: "Card Image Cap" %>
           <% end  %>
           <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
           <div class="card-body">
@@ -34,10 +35,13 @@
     </div>
 
     <br>
-
-    <div class="container row">
-      <%= link_to 'Nuevo Vehículo', new_user_vehicle_path(@user), class: "btn btn-primary" %>
-    </div>
+    <% if current_user.vehicles.count >= 3 %>
+      <h5 id="vehicle-alert">Para crear más vehículos, debes eliminar uno.<br>Puedes tener máximo 3</h5>
+    <% else %>
+      <div class="container row">
+        <%= link_to 'Nuevo Vehículo', new_user_vehicle_path(@user), class: "btn btn-primary" %>
+      </div>
+    <% end %>
 
   </div>
 </div>

@@ -4,8 +4,8 @@ class PlansController < InheritedResources::Base
 
 
   def index
-    @plans = Plan.all
     @user = current_user
+    @plans = Plan.all
   end
 
   def new
